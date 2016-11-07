@@ -4,18 +4,12 @@ class MethodsData {
 
     struct MethodSection {
         let name: String
-        let items: [MethodItem]
-    }
-
-    struct MethodItem {
-        let name: String
-        let method: MethodEnum
+        let items: [MethodEnum]
     }
 
     private let authorizationSection = MethodSection(name: "Authorization",
-                                                     items: [
-                                                        MethodItem(name: "asdf", method: .something),
-                                                        MethodItem(name: "foo", method: .request)])
+                                                     items: [.requestWhenInUseAuthorization,
+                                                             .requestAlwaysAuthorization])
 
     let sections: [MethodSection]
 
@@ -27,12 +21,12 @@ class MethodsData {
         return sections[index]
     }
 
-    func methodItems(at index: Int) -> [MethodItem] {
+    func methodEnums(at index: Int) -> [MethodEnum] {
         return methodSection(at: index).items
     }
 
-    func methodItem(at indexPath: IndexPath) -> MethodItem {
-        return methodItems(at: indexPath.section)[indexPath.row]
+    func methodItem(at indexPath: IndexPath) -> MethodEnum {
+        return methodEnums(at: indexPath.section)[indexPath.row]
     }
     
 }

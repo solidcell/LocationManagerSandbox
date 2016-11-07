@@ -14,7 +14,7 @@ class MethodsDelegate: NSObject, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let method = data.methodItem(at: indexPath).method
+        let method = data.methodItem(at: indexPath)
         executor.execute(method)
     }
     

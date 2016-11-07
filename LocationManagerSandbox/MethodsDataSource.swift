@@ -14,7 +14,7 @@ class MethodsDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MethodsDataSource.cellIdentifier,
                                                  for: indexPath)
-        cell.textLabel?.text = data.methodItem(at: indexPath).name
+        cell.textLabel?.text = String(describing: data.methodItem(at: indexPath))
         return cell
     }
 
@@ -23,7 +23,7 @@ class MethodsDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.methodItems(at: section).count
+        return data.methodEnums(at: section).count
     }
     
 }

@@ -9,12 +9,13 @@ class MethodsData {
 
     struct MethodItem {
         let name: String
+        let method: MethodEnum
     }
 
     private let authorizationSection = MethodSection(name: "Authorization",
                                                      items: [
-                                                        MethodItem(name: "asdf"),
-                                                        MethodItem(name: "foo")])
+                                                        MethodItem(name: "asdf", method: .something),
+                                                        MethodItem(name: "foo", method: .request)])
 
     let sections: [MethodSection]
 

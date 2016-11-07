@@ -17,6 +17,7 @@
 		88DD9E911DD0C731001BD5BE /* MethodsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E901DD0C731001BD5BE /* MethodsDataSource.swift */; };
 		88DD9E931DD0CB19001BD5BE /* MethodsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E921DD0CB19001BD5BE /* MethodsDelegate.swift */; };
 		88DD9E951DD0CBD5001BD5BE /* MethodsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E941DD0CBD5001BD5BE /* MethodsData.swift */; };
+		88DD9E971DD0D0B4001BD5BE /* MethodExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E961DD0D0B4001BD5BE /* MethodExecutor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		88DD9E901DD0C731001BD5BE /* MethodsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodsDataSource.swift; sourceTree = "<group>"; };
 		88DD9E921DD0CB19001BD5BE /* MethodsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodsDelegate.swift; sourceTree = "<group>"; };
 		88DD9E941DD0CBD5001BD5BE /* MethodsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodsData.swift; sourceTree = "<group>"; };
+		88DD9E961DD0D0B4001BD5BE /* MethodExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodExecutor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				88DD9E8D1DD0C5BA001BD5BE /* MethodsTableViewController.swift */,
 				88DD9E901DD0C731001BD5BE /* MethodsDataSource.swift */,
 				88DD9E921DD0CB19001BD5BE /* MethodsDelegate.swift */,
+				88DD9E961DD0D0B4001BD5BE /* MethodExecutor.swift */,
 				88DD9E941DD0CBD5001BD5BE /* MethodsData.swift */,
 			);
 			name = Methods;
@@ -226,6 +229,7 @@
 				88DD9E8E1DD0C5BA001BD5BE /* MethodsTableViewController.swift in Sources */,
 				88DD9E6E1DD0BDFC001BD5BE /* AppDelegate.swift in Sources */,
 				88DD9E931DD0CB19001BD5BE /* MethodsDelegate.swift in Sources */,
+				88DD9E971DD0D0B4001BD5BE /* MethodExecutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

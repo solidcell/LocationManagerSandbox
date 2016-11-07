@@ -3,9 +3,11 @@ import UIKit
 class MethodsTableViewController: UITableViewController {
 
     let data = MethodsData()
+    let methodExecutor = MethodExecutor()
     
     lazy var delegate: MethodsDelegate = {
-        return MethodsDelegate(data: self.data)
+        return MethodsDelegate(data: self.data,
+                               executor: self.methodExecutor)
     }()
     
     lazy var dataSouce: MethodsDataSource = {

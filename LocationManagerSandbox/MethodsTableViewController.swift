@@ -3,7 +3,7 @@ import UIKit
 class MethodsTableViewController: UITableViewController {
 
     let data = MethodsData()
-    let methodExecutor = MethodExecutor()
+    var methodExecutor: MethodExecutor!
     
     lazy var delegate: MethodsDelegate = {
         return MethodsDelegate(data: self.data,
@@ -20,5 +20,5 @@ class MethodsTableViewController: UITableViewController {
         tableView.dataSource = dataSouce
         tableView.delegate = delegate
     }
-    
+
 }

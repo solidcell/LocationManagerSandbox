@@ -11,8 +11,14 @@ class LogTableViewController: UITableViewController, LogDataDelegate {
     }
 
     func didAddEntry(at index: Int) {
-        let indexPaths = [IndexPath(row: index, section: 0)]
+        let indexPath = IndexPath(row: index, section: 0)
+        let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .top)
+        ensureIndexPathIsVisible(indexPath)
+    }
+
+    private func ensureIndexPathIsVisible(_ indexPath: IndexPath) {
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 
 }

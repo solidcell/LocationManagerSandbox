@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
-        <!--Method Table View Controller-->
+        <!--Methods Table View Controller-->
         <scene sceneID="ete-mW-ln1">
             <objects>
-                <tableViewController id="bCt-AP-CvQ" customClass="MethodTableViewController" customModule="LocationManagerSandbox" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="bCt-AP-CvQ" customClass="MethodsTableViewController" customModule="LocationManagerSandbox" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Et5-Cm-BSg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -14,7 +14,9 @@ class LogDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LogDataSource.cellIdentifier,
                                                  for: indexPath)
-        cell.textLabel?.text = logData.logs[indexPath.row]
+        let entry = logData.logs[indexPath.row]
+        cell.textLabel?.text = entry.title
+        cell.detailTextLabel?.text = entry.subtitle
         return cell
     }
 

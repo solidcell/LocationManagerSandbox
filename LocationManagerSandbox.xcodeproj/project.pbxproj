@@ -22,6 +22,7 @@
 		88DD9E9C1DD0D9EB001BD5BE /* LogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E9B1DD0D9EB001BD5BE /* LogDataSource.swift */; };
 		88DD9E9E1DD0DAA8001BD5BE /* LogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E9D1DD0DAA8001BD5BE /* LogData.swift */; };
 		88DD9EA01DD0DB8C001BD5BE /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E9F1DD0DB8C001BD5BE /* LocationManagerDelegate.swift */; };
+		88DD9EA21DD0E5F2001BD5BE /* CLAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9EA11DD0E5F2001BD5BE /* CLAuthorizationStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		88DD9E9B1DD0D9EB001BD5BE /* LogDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDataSource.swift; sourceTree = "<group>"; };
 		88DD9E9D1DD0DAA8001BD5BE /* LogData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogData.swift; sourceTree = "<group>"; };
 		88DD9E9F1DD0DB8C001BD5BE /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
+		88DD9EA11DD0E5F2001BD5BE /* CLAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLAuthorizationStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				88DD9E711DD0BDFC001BD5BE /* Main.storyboard */,
 				88DD9E6F1DD0BDFC001BD5BE /* ViewController.swift */,
 				88DD9E9F1DD0DB8C001BD5BE /* LocationManagerDelegate.swift */,
+				88DD9EA11DD0E5F2001BD5BE /* CLAuthorizationStatus.swift */,
 				88DD9E9A1DD0D9A6001BD5BE /* Log */,
 				88DD9E8F1DD0C721001BD5BE /* Methods */,
 				88DD9E741DD0BDFC001BD5BE /* Assets.xcassets */,
@@ -253,6 +256,7 @@
 				88DD9E931DD0CB19001BD5BE /* MethodsDelegate.swift in Sources */,
 				88DD9EA01DD0DB8C001BD5BE /* LocationManagerDelegate.swift in Sources */,
 				88DD9E9E1DD0DAA8001BD5BE /* LogData.swift in Sources */,
+				88DD9EA21DD0E5F2001BD5BE /* CLAuthorizationStatus.swift in Sources */,
 				88DD9E971DD0D0B4001BD5BE /* MethodExecutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

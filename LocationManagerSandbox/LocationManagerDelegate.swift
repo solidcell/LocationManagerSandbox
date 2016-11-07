@@ -9,11 +9,15 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        logData.newEntry("locationManager(_:didChangeAuthorization:) with \(status)")
+        let entry = LogEntry(title: "locationManager(_:didChangeAuthorization:)",
+                             subtitle: String(describing: status))
+        logData.newEntry(entry)
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        logData.newEntry("locationManager(_:didUpdateLocations:) with \(locations)")
+        let entry = LogEntry(title: "locationManager(_:didUpdateLocations:)",
+                             subtitle: String(describing: locations))
+        logData.newEntry(entry)
     }
 
 }

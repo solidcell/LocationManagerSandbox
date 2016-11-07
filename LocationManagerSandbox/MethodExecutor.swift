@@ -40,14 +40,16 @@ fileprivate extension MethodExecutor {
     }
 
     func authorizationStatus() {
-        let authStatus = CLLocationManager.authorizationStatus()
-        let entry = "authorizationStatus is \(authStatus)"
+        let status = CLLocationManager.authorizationStatus()
+        let entry = LogEntry(title: "authorizationStatus",
+                             subtitle: status.description)
         logData.newEntry(entry)
     }
 
     func locationServicesEnabled() {
         let enabled = CLLocationManager.locationServicesEnabled()
-        let entry = "locationServicesEnabled is \(enabled)"
+        let entry = LogEntry(title: "locationServicesEnabled",
+                             subtitle: String(describing: enabled))
         logData.newEntry(entry)
     }
     

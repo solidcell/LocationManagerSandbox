@@ -10,11 +10,16 @@ class MethodsData {
     private let authorizationSection = MethodSection(name: "Authorization",
                                                      items: [.requestWhenInUseAuthorization,
                                                              .requestAlwaysAuthorization])
+    
+    private let availabilitySection = MethodSection(name: "Availability",
+                                                    items: [.authorizationStatus,
+                                                            .locationServicesEnabled])
 
     let sections: [MethodSection]
 
     init() {
-        self.sections = [authorizationSection]
+        self.sections = [authorizationSection,
+                         availabilitySection]
     }
 
     func methodSection(at index: Int) -> MethodSection {

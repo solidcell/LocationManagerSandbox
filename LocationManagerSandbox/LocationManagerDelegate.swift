@@ -12,4 +12,8 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
         logData.newEntry("locationManager(_:didChangeAuthorization:) with \(status)")
     }
 
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        logData.newEntry("locationManager(_:didUpdateLocations:) with \(locations)")
+    }
+
 }

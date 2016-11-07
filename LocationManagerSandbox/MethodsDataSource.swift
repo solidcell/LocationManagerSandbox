@@ -18,6 +18,10 @@ class MethodsDataSource: NSObject, UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return data.methodSection(at: section).name
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.sections.count
     }

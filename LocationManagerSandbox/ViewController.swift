@@ -25,7 +25,8 @@ class ViewController: UIViewController {
     }
 
     private func prepare(methodsTableViewController: MethodsTableViewController) {
-        methodsTableViewController.methodExecutor = MethodExecutor(locationManager: locationManager)
+        methodsTableViewController.methodExecutor = MethodExecutor(locationManager: locationManager,
+                                                                   logData: logData)
     }
 
     private func prepare(logTableViewController: LogTableViewController) {

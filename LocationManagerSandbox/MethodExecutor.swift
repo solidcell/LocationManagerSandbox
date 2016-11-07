@@ -5,6 +5,7 @@ enum MethodEnum {
     case requestAlwaysAuthorization
     case authorizationStatus
     case locationServicesEnabled
+    case startUpdatingLocation
 }
 
 class MethodExecutor {
@@ -24,6 +25,7 @@ class MethodExecutor {
         case .requestAlwaysAuthorization: requestAlwaysAuthorization()
         case .authorizationStatus: authorizationStatus()
         case .locationServicesEnabled: locationServicesEnabled()
+        case .startUpdatingLocation: startUpdatingLocation()
         }
     }
     
@@ -51,6 +53,10 @@ fileprivate extension MethodExecutor {
         let entry = LogEntry(title: "locationServicesEnabled",
                              subtitle: String(describing: enabled))
         logData.newEntry(entry)
+    }
+
+    func startUpdatingLocation() {
+        locationManager.startUpdatingLocation()
     }
     
 }

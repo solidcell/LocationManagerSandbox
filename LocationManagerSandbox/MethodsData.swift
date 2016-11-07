@@ -14,12 +14,16 @@ class MethodsData {
     private let availabilitySection = MethodSection(name: "Availability",
                                                     items: [.authorizationStatus,
                                                             .locationServicesEnabled])
+    
+    private let standardLocationUpdatesSection = MethodSection(name: "Standard Location Updates",
+                                                               items: [.startUpdatingLocation])
 
     let sections: [MethodSection]
 
     init() {
         self.sections = [authorizationSection,
-                         availabilitySection]
+                         availabilitySection,
+                         standardLocationUpdatesSection]
     }
 
     func methodSection(at index: Int) -> MethodSection {

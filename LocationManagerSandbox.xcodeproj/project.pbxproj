@@ -13,6 +13,8 @@
 		88DD9E751DD0BDFC001BD5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DD9E741DD0BDFC001BD5BE /* Assets.xcassets */; };
 		88DD9E781DD0BDFC001BD5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD9E761DD0BDFC001BD5BE /* LaunchScreen.storyboard */; };
 		88DD9E831DD0BDFD001BD5BE /* LocationManagerSandboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E821DD0BDFD001BD5BE /* LocationManagerSandboxTests.swift */; };
+		88DD9E8E1DD0C5BA001BD5BE /* MethodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E8D1DD0C5BA001BD5BE /* MethodTableViewController.swift */; };
+		88DD9E911DD0C731001BD5BE /* MethodsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E901DD0C731001BD5BE /* MethodsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		88DD9E7E1DD0BDFD001BD5BE /* LocationManagerSandboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationManagerSandboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DD9E821DD0BDFD001BD5BE /* LocationManagerSandboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerSandboxTests.swift; sourceTree = "<group>"; };
 		88DD9E841DD0BDFD001BD5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88DD9E8D1DD0C5BA001BD5BE /* MethodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodTableViewController.swift; sourceTree = "<group>"; };
+		88DD9E901DD0C731001BD5BE /* MethodsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				88DD9E6D1DD0BDFC001BD5BE /* AppDelegate.swift */,
-				88DD9E6F1DD0BDFC001BD5BE /* ViewController.swift */,
 				88DD9E711DD0BDFC001BD5BE /* Main.storyboard */,
+				88DD9E6F1DD0BDFC001BD5BE /* ViewController.swift */,
+				88DD9E8F1DD0C721001BD5BE /* Methods */,
 				88DD9E741DD0BDFC001BD5BE /* Assets.xcassets */,
 				88DD9E761DD0BDFC001BD5BE /* LaunchScreen.storyboard */,
 				88DD9E791DD0BDFC001BD5BE /* Info.plist */,
@@ -94,6 +99,15 @@
 				88DD9E841DD0BDFD001BD5BE /* Info.plist */,
 			);
 			path = LocationManagerSandboxTests;
+			sourceTree = "<group>";
+		};
+		88DD9E8F1DD0C721001BD5BE /* Methods */ = {
+			isa = PBXGroup;
+			children = (
+				88DD9E8D1DD0C5BA001BD5BE /* MethodTableViewController.swift */,
+				88DD9E901DD0C731001BD5BE /* MethodsDataSource.swift */,
+			);
+			name = Methods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DD9E701DD0BDFC001BD5BE /* ViewController.swift in Sources */,
+				88DD9E911DD0C731001BD5BE /* MethodsDataSource.swift in Sources */,
+				88DD9E8E1DD0C5BA001BD5BE /* MethodTableViewController.swift in Sources */,
 				88DD9E6E1DD0BDFC001BD5BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

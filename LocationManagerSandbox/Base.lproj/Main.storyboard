@@ -26,11 +26,20 @@
                                     <segue destination="bCt-AP-CvQ" kind="embed" id="0e4-qd-Gqw"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrO-vi-dnO">
+                                <connections>
+                                    <segue destination="dsw-IX-WkD" kind="embed" id="Zpb-OD-8Ri"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="QrO-vi-dnO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8zk-4i-Qbr"/>
+                            <constraint firstItem="QrO-vi-dnO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AfC-Lv-Rhv"/>
                             <constraint firstAttribute="trailing" secondItem="ixS-E2-aDt" secondAttribute="trailing" id="D5G-S2-S6o"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ixS-E2-aDt" secondAttribute="bottom" id="G8O-nG-NKb"/>
+                            <constraint firstItem="ixS-E2-aDt" firstAttribute="top" secondItem="QrO-vi-dnO" secondAttribute="bottom" id="R4c-lt-Ibr"/>
+                            <constraint firstAttribute="trailing" secondItem="QrO-vi-dnO" secondAttribute="trailing" id="g6Z-Wg-00N"/>
                             <constraint firstItem="ixS-E2-aDt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yXz-yM-EEg"/>
                         </constraints>
                     </view>
@@ -38,6 +47,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--Log Table View Controller-->
+        <scene sceneID="T0K-uI-TS6">
+            <objects>
+                <tableViewController id="dsw-IX-WkD" customClass="LogTableViewController" customModule="LocationManagerSandbox" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sVz-SJ-BHC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogTableViewCellIdentifier" id="OUM-RX-bhG">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OUM-RX-bhG" id="dBw-Kc-oGE">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ZM-Fl-Rob" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918" y="-9"/>
         </scene>
         <!--Methods Table View Controller-->
         <scene sceneID="ete-mW-ln1">

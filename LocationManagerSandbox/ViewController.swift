@@ -4,7 +4,7 @@ import CoreLocation
 class ViewController: UIViewController {
 
     private let locationManager = CLLocationManager()
-    private let logData = LogData()
+    let logData = LogData()
     
     private lazy var locationManagerDelegate: LocationManagerDelegate = {
         return LocationManagerDelegate(logData: self.logData)

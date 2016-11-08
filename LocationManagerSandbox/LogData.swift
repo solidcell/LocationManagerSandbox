@@ -4,6 +4,7 @@ struct LogEntry {
 }
 
 enum MethodEnum {
+    case app(AppDelegate.MethodEnum)
     case executor(MethodExecutor.MethodEnum)
     case delegate(LocationManagerDelegate.MethodEnum)
 }

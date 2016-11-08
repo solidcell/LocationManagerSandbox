@@ -4,6 +4,11 @@ class CellDecorator {
 
     func decorate(_ cell: UITableViewCell, logEntry: LogEntry) {
         switch logEntry.method {
+        case .app(let method):
+            switch method {
+            case .didFinishLaunchingWithOptions:
+                cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)", subtitle: logEntry.value)
+            }
         case .delegate(let method):
             switch method {
             case .didChangeAuthorization:

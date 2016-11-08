@@ -1,6 +1,11 @@
 struct LogEntry {
-    let title: String
-    let subtitle: String
+    let method: MethodEnum
+    let value: String
+}
+
+enum MethodEnum {
+    case executor(MethodExecutor.MethodEnum)
+    case delegate(LocationManagerDelegate.MethodEnum)
 }
 
 class LogData {

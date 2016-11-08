@@ -4,7 +4,7 @@ class MethodsData {
 
     struct MethodSection {
         let name: String
-        let items: [MethodEnum]
+        let items: [MethodExecutor.MethodEnum]
     }
 
     private let authorizationSection = MethodSection(name: "Authorization",
@@ -30,11 +30,11 @@ class MethodsData {
         return sections[index]
     }
 
-    func methodEnums(at index: Int) -> [MethodEnum] {
+    func methodEnums(at index: Int) -> [MethodExecutor.MethodEnum] {
         return methodSection(at: index).items
     }
 
-    func methodItem(at indexPath: IndexPath) -> MethodEnum {
+    func methodItem(at indexPath: IndexPath) -> MethodExecutor.MethodEnum {
         return methodEnums(at: indexPath.section)[indexPath.row]
     }
     

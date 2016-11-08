@@ -1,14 +1,14 @@
 import CoreLocation
 
-enum MethodEnum {
-    case requestWhenInUseAuthorization
-    case requestAlwaysAuthorization
-    case authorizationStatus
-    case locationServicesEnabled
-    case startUpdatingLocation
-}
-
 class MethodExecutor {
+
+    enum MethodEnum {
+        case requestWhenInUseAuthorization
+        case requestAlwaysAuthorization
+        case authorizationStatus
+        case locationServicesEnabled
+        case startUpdatingLocation
+    }
 
     fileprivate let locationManager: CLLocationManager
     fileprivate let logData: LogData
@@ -43,15 +43,15 @@ fileprivate extension MethodExecutor {
 
     func authorizationStatus() {
         let status = CLLocationManager.authorizationStatus()
-        let entry = LogEntry(title: "authorizationStatus",
-                             subtitle: status.description)
+        let entry = LogEntry(method: .executor(.authorizationStatus),
+                             value: status.description)
         logData.newEntry(entry)
     }
 
     func locationServicesEnabled() {
         let enabled = CLLocationManager.locationServicesEnabled()
-        let entry = LogEntry(title: "locationServicesEnabled",
-                             subtitle: String(describing: enabled))
+        let entry = LogEntry(method: .executor(.locationServicesEnabled),
+                             value: String(describing: enabled))
         logData.newEntry(entry)
     }
 

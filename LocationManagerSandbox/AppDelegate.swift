@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController = window?.rootViewController as! ViewController
         logData = viewController.logData
         
-        logData?.newEntry(.didFinishLaunchingWithOptions(String(describing: launchOptions)))
+        logData?.newEntry(.didFinishLaunchingWithOptions(launchOptions))
         
         return true
     }

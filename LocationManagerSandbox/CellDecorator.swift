@@ -4,16 +4,21 @@ class CellDecorator {
 
     func decorate(_ cell: UITableViewCell, logEntry: LogEntry) {
         switch logEntry {
-        case .didFinishLaunchingWithOptions(let value):
-            cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)", subtitle: value)
-        case .didChangeAuthorization(let value):
-            cell.decorate(title: "locationManager(_:didChangeAuthorization:)", subtitle: value)
-        case .didUpdateLocations(let value):
-            cell.decorate(title: "locationManager(_:didUpdateLocations:)", subtitle: value)
-        case .authorizationStatus(let value):
-            cell.decorate(title: "authorizationStatus", subtitle: value)
-        case .locationServicesEnabled(let value):
-            cell.decorate(title: "locationServicesEnabled", subtitle: value)
+        case .didFinishLaunchingWithOptions(let launchOptions):
+            cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)",
+                          subtitle: String(describing: launchOptions))
+        case .didChangeAuthorization(let status):
+            cell.decorate(title: "locationManager(_:didChangeAuthorization:)",
+                          subtitle: String(describing: status))
+        case .didUpdateLocations(let locations):
+            cell.decorate(title: "locationManager(_:didUpdateLocations:)",
+                          subtitle: String(describing: locations))
+        case .authorizationStatus(let status):
+            cell.decorate(title: "authorizationStatus",
+                          subtitle: String(describing: status))
+        case .locationServicesEnabled(let isEnabled):
+            cell.decorate(title: "locationServicesEnabled",
+                          subtitle: isEnabled.description)
         }
     }
 

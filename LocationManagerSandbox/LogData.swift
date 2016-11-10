@@ -1,12 +1,15 @@
+import UIKit
+import CoreLocation
+
 enum LogEntry {
     // App Delegate
-    case didFinishLaunchingWithOptions(String)
+    case didFinishLaunchingWithOptions([UIApplicationLaunchOptionsKey: Any]?)
     // Location Manager
-    case authorizationStatus(String)
-    case locationServicesEnabled(String)
+    case authorizationStatus(CLAuthorizationStatus)
+    case locationServicesEnabled(Bool)
     // Location Manager Delegate
-    case didChangeAuthorization(String)
-    case didUpdateLocations(String)
+    case didChangeAuthorization(CLAuthorizationStatus)
+    case didUpdateLocations([CLLocation])
 }
 
 class LogData {

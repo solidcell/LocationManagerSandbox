@@ -3,31 +3,20 @@ import UIKit
 class CellDecorator {
 
     func decorate(_ cell: UITableViewCell, logEntry: LogEntry) {
-        switch logEntry.method {
-        case .app(let method):
-            switch method {
-            case .didFinishLaunchingWithOptions:
-                cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)", subtitle: logEntry.value)
-            }
-        case .delegate(let method):
-            switch method {
-            case .didChangeAuthorization:
-                cell.decorate(title: "locationManager(_:didChangeAuthorization:)", subtitle: logEntry.value)
-            case .didUpdateLocations:
-                cell.decorate(title: "locationManager(_:didUpdateLocations:)", subtitle: logEntry.value)
-            }
-        case .executor(let method):
-            switch method {
-            case .authorizationStatus:
-                cell.decorate(title: "authorizationStatus", subtitle: logEntry.value)
-            case .locationServicesEnabled:
-                cell.decorate(title: "locationServicesEnabled", subtitle: logEntry.value)
-            default:
-                fatalError("The other methods don't support logging yet.")
-            }
+        switch logEntry {
+        case .didFinishLaunchingWithOptions(let value):
+            cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)", subtitle: value)
+        case .didChangeAuthorization(let value):
+            cell.decorate(title: "locationManager(_:didChangeAuthorization:)", subtitle: value)
+        case .didUpdateLocations(let value):
+            cell.decorate(title: "locationManager(_:didUpdateLocations:)", subtitle: value)
+        case .authorizationStatus(let value):
+            cell.decorate(title: "authorizationStatus", subtitle: value)
+        case .locationServicesEnabled(let value):
+            cell.decorate(title: "locationServicesEnabled", subtitle: value)
         }
     }
-    
+
 }
 
 private extension UITableViewCell {

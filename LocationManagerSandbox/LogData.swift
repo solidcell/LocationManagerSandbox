@@ -1,12 +1,12 @@
-struct LogEntry {
-    let method: MethodEnum
-    let value: String
-}
-
-enum MethodEnum {
-    case app(AppDelegate.MethodEnum)
-    case executor(MethodExecutor.MethodEnum)
-    case delegate(LocationManagerDelegate.MethodEnum)
+enum LogEntry {
+    // App Delegate
+    case didFinishLaunchingWithOptions(String)
+    // Location Manager
+    case authorizationStatus(String)
+    case locationServicesEnabled(String)
+    // Location Manager Delegate
+    case didChangeAuthorization(String)
+    case didUpdateLocations(String)
 }
 
 class LogData {

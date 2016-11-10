@@ -6,17 +6,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private var logData: LogData?
 
-    enum MethodEnum {
-        case didFinishLaunchingWithOptions
-    }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let viewController = window?.rootViewController as! ViewController
         logData = viewController.logData
         
-        let entry = LogEntry(method: .app(.didFinishLaunchingWithOptions),
-                             value: String(describing: launchOptions))
-        logData?.newEntry(entry)
+        logData?.newEntry(.didFinishLaunchingWithOptions(String(describing: launchOptions)))
         
         return true
     }

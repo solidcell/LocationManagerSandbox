@@ -30,8 +30,8 @@ class CellDecorator {
 
 private extension CLAuthorizationStatus {
 
-    private var good: UIColor { return UIColor.green }
-    private var bad: UIColor { return UIColor.red }
+    private var good: UIColor { return UIColor(rgb: 0x67AD65) }
+    private var bad: UIColor { return UIColor(rgb: 0xC94D3F) }
     private var neutral: UIColor { return UIColor.black }
 
     var color: UIColor {

@@ -13,7 +13,22 @@ class LogTableViewController: UITableViewController {
 
     private func configureCellsToSelfSize() {
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 300
+        tableView.estimatedRowHeight = 60
+    }
+
+    // Without a cache, scrolling to rows at the bottom becomes
+    // very jumpy/jittery
+    private var cellHeightCache = [IndexPath : CGFloat]()
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cellHeightCache[indexPath] = cell.frame.height
+    }
+
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let cachedHeight = cellHeightCache[indexPath] {
+            return cachedHeight
+        }
+        return UITableViewAutomaticDimension
     }
 
 }

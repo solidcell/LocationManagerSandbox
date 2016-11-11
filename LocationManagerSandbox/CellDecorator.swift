@@ -38,6 +38,9 @@ class CellDecorator {
         case .startUpdatingLocation(let date):
             cell.decorate(title: "startUpdatingLocation()",
                           detail: date.formatted)
+        case .stopUpdatingLocation(let date):
+            cell.decorate(title: "stopUpdatingLocation()",
+                          detail: date.formatted)
         // Location Manager Delegate
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",

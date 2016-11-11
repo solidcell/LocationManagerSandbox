@@ -8,6 +8,7 @@ class MethodExecutor {
         case authorizationStatus
         case locationServicesEnabled
         case startUpdatingLocation
+        case stopUpdatingLocation
     }
 
     fileprivate let locationManager: CLLocationManager
@@ -26,6 +27,7 @@ class MethodExecutor {
         case .authorizationStatus: authorizationStatus()
         case .locationServicesEnabled: locationServicesEnabled()
         case .startUpdatingLocation: startUpdatingLocation()
+        case .stopUpdatingLocation: stopUpdatingLocation()
         }
     }
     
@@ -56,6 +58,11 @@ fileprivate extension MethodExecutor {
     func startUpdatingLocation() {
         locationManager.startUpdatingLocation()
         logData.newEntry(.startUpdatingLocation(Date()))
+    }
+
+    func stopUpdatingLocation() {
+        locationManager.stopUpdatingLocation()
+        logData.newEntry(.stopUpdatingLocation(Date()))
     }
     
 }

@@ -7,22 +7,22 @@ class CellDecorator {
         switch logEntry {
         case .didFinishLaunchingWithOptions(let launchOptions):
             cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)",
-                          subtitle: String(describing: launchOptions))
+                          details: [String(describing: launchOptions)])
         case .didChangeAuthorization(let status):
             cell.decorate(title: "locationManager(_:didChangeAuthorization:)",
-                          subtitle: String(describing: status),
-                          subtitleColor: status.color)
+                          details: [String(describing: status)],
+                          detailsColor: status.color)
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",
-                          subtitle: String(describing: locations))
+                          details: [String(describing: locations)])
         case .authorizationStatus(let status):
             cell.decorate(title: "authorizationStatus",
-                          subtitle: String(describing: status),
-                          subtitleColor: status.color)
+                          details: [String(describing: status)],
+                          detailsColor: status.color)
         case .locationServicesEnabled(let isEnabled):
             cell.decorate(title: "locationServicesEnabled",
-                          subtitle: isEnabled.description,
-                          subtitleColor: isEnabled ? UIColor.green : UIColor.red)
+                          details: [isEnabled.description],
+                          detailsColor: isEnabled ? UIColor.green : UIColor.red)
         }
     }
 

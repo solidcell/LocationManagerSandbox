@@ -1,7 +1,17 @@
 import UIKit
 import CoreLocation
 
-enum LogEntry {
+struct LogEntry {
+    let timestamp: Date
+    let method: LogMethod
+
+    init(_ method: LogMethod) {
+        self.timestamp = Date()
+        self.method = method
+    }
+}
+
+enum LogMethod {
     // App Delegate
     case didFinishLaunchingWithOptions([UIApplicationLaunchOptionsKey: Any]?)
     case applicationDidEnterBackground
@@ -12,14 +22,14 @@ enum LogEntry {
     
     // Location Manager
         // Requesting Authorization for Location Services
-    case requestWhenInUseAuthorization(Date)
-    case requestAlwaysAuthorization(Date)
+    case requestWhenInUseAuthorization
+    case requestAlwaysAuthorization
         // Determining the Availability of Services
     case authorizationStatus(CLAuthorizationStatus)
     case locationServicesEnabled(Bool)
         // Initiating Standard Location Updates
-    case startUpdatingLocation(Date)
-    case stopUpdatingLocation(Date)
+    case startUpdatingLocation
+    case stopUpdatingLocation
     
     // Location Manager Delegate
     case didUpdateLocations([CLLocation])
@@ -31,7 +41,8 @@ class LogData {
     weak var delegate: LogDataDelegate?
     private(set) var logs = [LogEntry]()
 
-    func newEntry(_ entry: LogEntry) {
+    func newEntry(_ method: LogMethod) {
+        let entry = LogEntry(method)
         logs.append(entry)
         delegate?.didAddEntry(at: logs.count - 1)
     }

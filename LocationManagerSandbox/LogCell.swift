@@ -4,24 +4,34 @@ class LogCell: UITableViewCell {
 
     static let cellIdentifier = "LogCellIdentifier"
 
+    @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsStackView: UIStackView!
 
-    func decorate(title: String) {
-        decorate(title: title, details: [])
+    func decorate(title: String,
+                  timestamp: String) {
+        decorate(title: title,
+                 timestamp: timestamp,
+                 details: [])
     }
 
     func decorate(title: String,
+                  timestamp: String,
                   detail: CustomStringConvertible,
                   detailColor: UIColor? = nil) {
-        decorate(title: title, details: [detail], detailsColor: detailColor)
+        decorate(title: title,
+                 timestamp: timestamp,
+                 details: [detail],
+                 detailsColor: detailColor)
     }
 
     func decorate(title: String,
+                  timestamp: String,
                   details: [CustomStringConvertible],
                   detailsColor: UIColor? = nil) {
         let _detailsColor = detailsColor ?? UIColor.black
 
+        timestampLabel.text = timestamp
         titleLabel.text = title
 
         setDetails(details: details, color: _detailsColor)
@@ -31,7 +41,8 @@ class LogCell: UITableViewCell {
 
 extension LogCell {
 
-    fileprivate func setDetails(details: [CustomStringConvertible], color: UIColor) {
+    fileprivate func setDetails(details: [CustomStringConvertible],
+                                color: UIColor) {
         removeAllCurrentDetails()
         details.forEach { detail in
             addDetail(detail, color: color)

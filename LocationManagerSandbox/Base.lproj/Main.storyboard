@@ -58,31 +58,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogCellIdentifier" rowHeight="100" id="OUM-RX-bhG" userLabel="LogCell" customClass="LogCell" customModule="LocationManagerSandbox" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogCellIdentifier" rowHeight="111" id="OUM-RX-bhG" userLabel="LogCell" customClass="LogCell" customModule="LocationManagerSandbox" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OUM-RX-bhG" id="dBw-Kc-oGE">
-                                    <frame key="frameInset" width="375" height="99"/>
+                                    <frame key="frameInset" width="375" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGe-Gs-E6x" userLabel="Title">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mdr-Ul-SZa" userLabel="Details"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qen-lf-l5K">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="17:25:14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNF-w0-k2T" userLabel="Timestamp">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locationManager(_:didUpdateLocations:)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="cGe-Gs-E6x" userLabel="Method Label">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mdr-Ul-SZa" userLabel="Details"/>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Mdr-Ul-SZa" firstAttribute="bottom" secondItem="dBw-Kc-oGE" secondAttribute="bottomMargin" id="SAg-Vb-Ppb"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Mdr-Ul-SZa" secondAttribute="trailing" constant="8" id="aVh-8i-UUB"/>
-                                        <constraint firstItem="Mdr-Ul-SZa" firstAttribute="leading" secondItem="dBw-Kc-oGE" secondAttribute="leadingMargin" constant="8" id="faO-7V-3wf"/>
-                                        <constraint firstItem="cGe-Gs-E6x" firstAttribute="top" secondItem="dBw-Kc-oGE" secondAttribute="topMargin" id="gfX-mb-No1"/>
-                                        <constraint firstItem="cGe-Gs-E6x" firstAttribute="leading" secondItem="dBw-Kc-oGE" secondAttribute="leadingMargin" constant="8" id="hO7-yt-cud"/>
-                                        <constraint firstItem="Mdr-Ul-SZa" firstAttribute="top" secondItem="cGe-Gs-E6x" secondAttribute="bottom" id="pUX-gS-fGc"/>
+                                        <constraint firstItem="qen-lf-l5K" firstAttribute="leading" secondItem="dBw-Kc-oGE" secondAttribute="leadingMargin" constant="8" id="Hyd-Pd-Ck8"/>
+                                        <constraint firstAttribute="trailing" secondItem="qen-lf-l5K" secondAttribute="trailing" constant="8" id="Q4i-5a-6Tk"/>
+                                        <constraint firstItem="qen-lf-l5K" firstAttribute="top" secondItem="dBw-Kc-oGE" secondAttribute="top" constant="8" id="b51-0W-5Gj"/>
+                                        <constraint firstAttribute="bottom" secondItem="qen-lf-l5K" secondAttribute="bottom" constant="8" id="rFG-6b-lBv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="detailsStackView" destination="Mdr-Ul-SZa" id="cet-qH-sEF"/>
+                                    <outlet property="timestampLabel" destination="tNF-w0-k2T" id="uue-3i-PHg"/>
                                     <outlet property="titleLabel" destination="cGe-Gs-E6x" id="E3f-sJ-OuE"/>
                                 </connections>
                             </tableViewCell>

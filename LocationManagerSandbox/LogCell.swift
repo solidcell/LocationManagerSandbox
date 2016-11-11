@@ -7,6 +7,10 @@ class LogCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsStackView: UIStackView!
 
+    func decorate(title: String) {
+        decorate(title: title, details: [])
+    }
+
     func decorate(title: String,
                   detail: CustomStringConvertible,
                   detailColor: UIColor? = nil) {

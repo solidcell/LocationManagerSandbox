@@ -5,20 +5,28 @@ class CellDecorator {
 
     func decorate(_ cell: LogCell, logEntry: LogEntry) {
         switch logEntry {
+        // App Delegate
         case .didFinishLaunchingWithOptions(let launchOptions):
             let details = launchOptions?.flatMap { "\($0): \($1)" } ?? []
             cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)",
                           details: details)
+        case .applicationDidEnterBackground:
+            cell.decorate(title: "applicationDidEnterBackground(_:)")
+        case .applicationWillResignActive:
+            cell.decorate(title: "applicationWillResignActive(_:)")
+        case .applicationWillEnterForeground:
+            cell.decorate(title: "applicationWillEnterForeground(_:)")
+        case .applicationDidBecomeActive:
+            cell.decorate(title: "applicationDidBecomeActive(_:)")
+        case .applicationWillTerminate:
+            cell.decorate(title: "applicationWillTerminate(_:)")
+        // Location Manager
         case .requestWhenInUseAuthorization(let date):
             cell.decorate(title: "requestWhenInUseAuthorization()",
                           detail: date)
-        case .didChangeAuthorization(let status):
-            cell.decorate(title: "locationManager(_:didChangeAuthorization:)",
-                          detail: status,
-                          detailColor: status.color)
-        case .didUpdateLocations(let locations):
-            cell.decorate(title: "locationManager(_:didUpdateLocations:)",
-                          details: locations)
+        case .requestAlwaysAuthorization(let date):
+            cell.decorate(title: "requestAlwaysAuthorization()",
+                          detail: date)
         case .authorizationStatus(let status):
             cell.decorate(title: "authorizationStatus()",
                           detail: status,
@@ -30,9 +38,14 @@ class CellDecorator {
         case .startUpdatingLocation(let date):
             cell.decorate(title: "startUpdatingLocation()",
                           detail: date)
-        case .requestAlwaysAuthorization(let date):
-            cell.decorate(title: "requestAlwaysAuthorization()",
-                          detail: date)
+        // Location Manager Delegate
+        case .didUpdateLocations(let locations):
+            cell.decorate(title: "locationManager(_:didUpdateLocations:)",
+                          details: locations)
+        case .didChangeAuthorization(let status):
+            cell.decorate(title: "locationManager(_:didChangeAuthorization:)",
+                          detail: status,
+                          detailColor: status.color)
         }
     }
 

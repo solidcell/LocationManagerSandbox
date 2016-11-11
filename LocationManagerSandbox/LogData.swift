@@ -4,15 +4,20 @@ import CoreLocation
 enum LogEntry {
     // App Delegate
     case didFinishLaunchingWithOptions([UIApplicationLaunchOptionsKey: Any]?)
+    case applicationDidEnterBackground
+    case applicationWillResignActive
+    case applicationWillEnterForeground
+    case applicationDidBecomeActive
+    case applicationWillTerminate
     // Location Manager
     case requestWhenInUseAuthorization(NSDate)
     case requestAlwaysAuthorization(NSDate)
-    case startUpdatingLocation(NSDate)
     case authorizationStatus(CLAuthorizationStatus)
     case locationServicesEnabled(Bool)
+    case startUpdatingLocation(NSDate)
     // Location Manager Delegate
-    case didChangeAuthorization(CLAuthorizationStatus)
     case didUpdateLocations([CLLocation])
+    case didChangeAuthorization(CLAuthorizationStatus)
 }
 
 class LogData {

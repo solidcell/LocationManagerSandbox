@@ -10,11 +10,11 @@ enum LogEntry {
     case applicationDidBecomeActive
     case applicationWillTerminate
     // Location Manager
-    case requestWhenInUseAuthorization(NSDate)
-    case requestAlwaysAuthorization(NSDate)
+    case requestWhenInUseAuthorization(Date)
+    case requestAlwaysAuthorization(Date)
     case authorizationStatus(CLAuthorizationStatus)
     case locationServicesEnabled(Bool)
-    case startUpdatingLocation(NSDate)
+    case startUpdatingLocation(Date)
     // Location Manager Delegate
     case didUpdateLocations([CLLocation])
     case didChangeAuthorization(CLAuthorizationStatus)

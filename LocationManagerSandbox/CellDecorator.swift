@@ -23,10 +23,10 @@ class CellDecorator {
         // Location Manager
         case .requestWhenInUseAuthorization(let date):
             cell.decorate(title: "requestWhenInUseAuthorization()",
-                          detail: date)
+                          detail: date.formatted)
         case .requestAlwaysAuthorization(let date):
             cell.decorate(title: "requestAlwaysAuthorization()",
-                          detail: date)
+                          detail: date.formatted)
         case .authorizationStatus(let status):
             cell.decorate(title: "authorizationStatus()",
                           detail: status,
@@ -37,7 +37,7 @@ class CellDecorator {
                           detailColor: isEnabled.color)
         case .startUpdatingLocation(let date):
             cell.decorate(title: "startUpdatingLocation()",
-                          detail: date)
+                          detail: date.formatted)
         // Location Manager Delegate
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",
@@ -57,10 +57,18 @@ private var dateFormatter: DateFormatter = {
     return dateFormatter
 }()
 
+extension Date {
+
+    var formatted: String {
+        return dateFormatter.string(from: self)
+    }
+    
+}
+
 extension CLLocation {
 
     override open var description: String {
-        return "\(coordinate)(\(horizontalAccuracy)) \(dateFormatter.string(from: timestamp)) \(altitude)(\(verticalAccuracy)) s\(speed) c\(course)"
+        return "\(coordinate)(\(horizontalAccuracy)) \(timestamp.formatted) \(altitude)(\(verticalAccuracy)) s\(speed) c\(course)"
     }
     
 }

@@ -35,12 +35,12 @@ fileprivate extension MethodExecutor {
 
     func requestWhenInUseAuthorization() {
         locationManager.requestWhenInUseAuthorization()
-        logData.newEntry(.requestWhenInUseAuthorization(NSDate()))
+        logData.newEntry(.requestWhenInUseAuthorization(Date()))
     }
     
     func requestAlwaysAuthorization() {
         locationManager.requestAlwaysAuthorization()
-        logData.newEntry(.requestAlwaysAuthorization(NSDate()))
+        logData.newEntry(.requestAlwaysAuthorization(Date()))
     }
 
     func authorizationStatus() {
@@ -55,7 +55,7 @@ fileprivate extension MethodExecutor {
 
     func startUpdatingLocation() {
         locationManager.startUpdatingLocation()
-        logData.newEntry(.startUpdatingLocation(NSDate()))
+        logData.newEntry(.startUpdatingLocation(Date()))
     }
     
 }

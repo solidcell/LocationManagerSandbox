@@ -27,7 +27,11 @@ class LogCell: UITableViewCell {
         setDetails(details: details, color: _detailsColor)
     }
 
-    private func setDetails(details: [CustomStringConvertible], color: UIColor) {
+}
+
+extension LogCell {
+
+    fileprivate func setDetails(details: [CustomStringConvertible], color: UIColor) {
         removeAllCurrentDetails()
         details.forEach { detail in
             addDetail(detail, color: color)
@@ -50,5 +54,5 @@ class LogCell: UITableViewCell {
             detailView.removeFromSuperview()
         }
     }
-
+    
 }

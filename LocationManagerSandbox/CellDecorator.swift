@@ -6,8 +6,9 @@ class CellDecorator {
     func decorate(_ cell: LogCell, logEntry: LogEntry) {
         switch logEntry {
         case .didFinishLaunchingWithOptions(let launchOptions):
+            let details = launchOptions == nil ? [] : [String(describing: launchOptions)]
             cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)",
-                          details: [String(describing: launchOptions)])
+                          details: details)
         case .didChangeAuthorization(let status):
             cell.decorate(title: "locationManager(_:didChangeAuthorization:)",
                           details: [String(describing: status)],
@@ -22,25 +23,37 @@ class CellDecorator {
         case .locationServicesEnabled(let isEnabled):
             cell.decorate(title: "locationServicesEnabled",
                           details: [isEnabled.description],
-                          detailsColor: isEnabled ? UIColor.green : UIColor.red)
+                          detailsColor: isEnabled.color)
         }
     }
 
 }
 
-private extension CLAuthorizationStatus {
+private extension UIColor {
 
-    private var good: UIColor { return UIColor(rgb: 0x67AD65) }
-    private var bad: UIColor { return UIColor(rgb: 0xC94D3F) }
-    private var neutral: UIColor { return UIColor.black }
+    class var good: UIColor { return UIColor(rgb: 0x67AD65) }
+    class var bad: UIColor { return UIColor(rgb: 0xC94D3F) }
+    class var neutral: UIColor { return UIColor.black }
+
+}
+
+private extension Bool {
+
+    var color: UIColor {
+        return self ? UIColor.good : UIColor.bad
+    }
+    
+}
+
+private extension CLAuthorizationStatus {
 
     var color: UIColor {
         switch self {
-        case .notDetermined: return neutral
-        case .authorizedAlways: return good
-        case .authorizedWhenInUse: return good
-        case .denied: return bad
-        case .restricted: return bad
+        case .notDetermined: return UIColor.neutral
+        case .authorizedAlways: return UIColor.good
+        case .authorizedWhenInUse: return UIColor.good
+        case .denied: return UIColor.bad
+        case .restricted: return UIColor.bad
         }
     }
     

@@ -8,8 +8,14 @@ class LogCell: UITableViewCell {
     @IBOutlet weak var detailsStackView: UIStackView!
 
     func decorate(title: String,
+                  detail: CustomStringConvertible,
+                  detailColor: UIColor?) {
+        decorate(title: title, details: [detail], detailsColor: detailColor)
+    }
+
+    func decorate(title: String,
                   details: [CustomStringConvertible],
-                  detailsColor: UIColor = UIColor.black) {
+                  detailsColor: UIColor! = UIColor.black) {
 
         titleLabel.text = title
 

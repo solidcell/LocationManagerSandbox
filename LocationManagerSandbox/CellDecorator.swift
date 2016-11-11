@@ -6,24 +6,24 @@ class CellDecorator {
     func decorate(_ cell: LogCell, logEntry: LogEntry) {
         switch logEntry {
         case .didFinishLaunchingWithOptions(let launchOptions):
-            let details = launchOptions == nil ? [] : [String(describing: launchOptions)]
+            let details = launchOptions?.flatMap { "\($0): \($1)" } ?? []
             cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)",
                           details: details)
         case .didChangeAuthorization(let status):
             cell.decorate(title: "locationManager(_:didChangeAuthorization:)",
-                          details: [status],
-                          detailsColor: status.color)
+                          detail: status,
+                          detailColor: status.color)
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",
                           details: locations)
         case .authorizationStatus(let status):
             cell.decorate(title: "authorizationStatus",
-                          details: [status],
-                          detailsColor: status.color)
+                          detail: status,
+                          detailColor: status.color)
         case .locationServicesEnabled(let isEnabled):
             cell.decorate(title: "locationServicesEnabled",
-                          details: [isEnabled],
-                          detailsColor: isEnabled.color)
+                          detail: isEnabled,
+                          detailColor: isEnabled.color)
         }
     }
 

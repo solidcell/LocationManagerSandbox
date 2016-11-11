@@ -82,7 +82,7 @@ extension Date {
 extension CLLocation {
 
     override open var description: String {
-        return "\(coordinate)(\(horizontalAccuracy)) \(timestamp.formatted) \(altitude)(\(verticalAccuracy)) s\(speed) c\(course)"
+        return "\(coordinate)(\(horizontalAccuracy)) \(timestamp.formatted) a\(altitude)(\(verticalAccuracy)) s\(speed) c\(course)"
     }
     
 }

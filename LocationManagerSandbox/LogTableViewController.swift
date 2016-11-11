@@ -31,6 +31,43 @@ class LogTableViewController: UITableViewController {
         return UITableViewAutomaticDimension
     }
 
+    var follow = true
+
+    func scrolledToBottom(_ scrollView: UIScrollView) -> Bool {
+        let bottomContentOffset = scrollView.contentSize.height - scrollView.frame.height
+        let scrollOffset = scrollView.contentOffset.y
+        return scrollOffset >= bottomContentOffset
+    }
+
+    var userDragging = false
+    var userDecelerating = false
+    
+    var userScrolling: Bool {
+        return userDragging || userDecelerating
+    }
+
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !userScrolling { return }
+
+        follow = scrolledToBottom(scrollView)
+    }
+
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        userDragging = true
+    }
+
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        userDragging = false
+    }
+
+    override func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        userDecelerating = true
+    }
+
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        userDecelerating = false
+    }
+
 }
 
 extension LogTableViewController: LogDataDelegate {
@@ -38,14 +75,16 @@ extension LogTableViewController: LogDataDelegate {
     func didAddEntry(at index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         insertCell(at: indexPath)
-        ensureIndexPathIsVisible(indexPath)
+        possiblyScrollTo(indexPath)
     }
 
     private func insertCell(at indexPath: IndexPath) {
         tableView.insertRows(at: [indexPath], with: .top)
     }
 
-    private func ensureIndexPathIsVisible(_ indexPath: IndexPath) {
+    private func possiblyScrollTo(_ indexPath: IndexPath) {
+        if !follow { return }
+        
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 

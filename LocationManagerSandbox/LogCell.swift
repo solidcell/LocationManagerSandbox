@@ -8,7 +8,7 @@ class LogCell: UITableViewCell {
     @IBOutlet weak var detailsStackView: UIStackView!
 
     func decorate(title: String,
-                  details: [String],
+                  details: [CustomStringConvertible],
                   detailsColor: UIColor = UIColor.black) {
 
         titleLabel.text = title
@@ -16,16 +16,16 @@ class LogCell: UITableViewCell {
         setDetails(details: details, color: detailsColor)
     }
 
-    private func setDetails(details: [String], color: UIColor) {
+    private func setDetails(details: [CustomStringConvertible], color: UIColor) {
         removeAllCurrentDetails()
         details.forEach { detail in
             addDetail(detail, color: color)
         }
     }
 
-    private func addDetail(_ text: String, color: UIColor) {
+    private func addDetail(_ text: CustomStringConvertible, color: UIColor) {
         let detailLabel = UILabel()
-        detailLabel.text = text
+        detailLabel.text = text.description
         detailLabel.textColor = color
         detailLabel.font = UIFont.systemFont(ofSize: 14)
         detailsStackView.addArrangedSubview(detailLabel)

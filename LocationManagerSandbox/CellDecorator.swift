@@ -11,18 +11,18 @@ class CellDecorator {
                           details: details)
         case .didChangeAuthorization(let status):
             cell.decorate(title: "locationManager(_:didChangeAuthorization:)",
-                          details: [String(describing: status)],
+                          details: [status],
                           detailsColor: status.color)
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",
-                          details: [String(describing: locations)])
+                          details: locations)
         case .authorizationStatus(let status):
             cell.decorate(title: "authorizationStatus",
-                          details: [String(describing: status)],
+                          details: [status],
                           detailsColor: status.color)
         case .locationServicesEnabled(let isEnabled):
             cell.decorate(title: "locationServicesEnabled",
-                          details: [isEnabled.description],
+                          details: [isEnabled],
                           detailsColor: isEnabled.color)
         }
     }

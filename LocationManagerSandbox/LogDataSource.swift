@@ -2,8 +2,6 @@ import UIKit
 
 class LogDataSource: NSObject, UITableViewDataSource {
 
-    static let cellIdentifier = "LogTableViewCellIdentifier"
-
     private let logData: LogData
     private let cellDecorator = CellDecorator()
 
@@ -13,8 +11,8 @@ class LogDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LogDataSource.cellIdentifier,
-                                                 for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: LogCell.cellIdentifier,
+                                                 for: indexPath) as! LogCell
         let entry = logData.logs[indexPath.row]
         cellDecorator.decorate(cell, logEntry: entry)
         return cell

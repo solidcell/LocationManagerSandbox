@@ -25,6 +25,7 @@
 		88DD9EA21DD0E5F2001BD5BE /* CLAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9EA11DD0E5F2001BD5BE /* CLAuthorizationStatus.swift */; };
 		88DD9EA61DD22118001BD5BE /* CellDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9EA51DD22118001BD5BE /* CellDecorator.swift */; };
 		88DD9EDE1DD49A9B001BD5BE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9EDD1DD49A9B001BD5BE /* UIColor.swift */; };
+		88DD9EE11DD49BD8001BD5BE /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9EE01DD49BD8001BD5BE /* LogCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		88DD9EA11DD0E5F2001BD5BE /* CLAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLAuthorizationStatus.swift; sourceTree = "<group>"; };
 		88DD9EA51DD22118001BD5BE /* CellDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDecorator.swift; sourceTree = "<group>"; };
 		88DD9EDD1DD49A9B001BD5BE /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		88DD9EE01DD49BD8001BD5BE /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +143,10 @@
 			isa = PBXGroup;
 			children = (
 				88DD9E981DD0D987001BD5BE /* LogTableViewController.swift */,
+				88DD9E9D1DD0DAA8001BD5BE /* LogData.swift */,
 				88DD9E9B1DD0D9EB001BD5BE /* LogDataSource.swift */,
 				88DD9EA51DD22118001BD5BE /* CellDecorator.swift */,
-				88DD9E9D1DD0DAA8001BD5BE /* LogData.swift */,
+				88DD9EE01DD49BD8001BD5BE /* LogCell.swift */,
 			);
 			name = Log;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				88DD9E991DD0D987001BD5BE /* LogTableViewController.swift in Sources */,
 				88DD9E951DD0CBD5001BD5BE /* MethodsData.swift in Sources */,
 				88DD9E701DD0BDFC001BD5BE /* ViewController.swift in Sources */,
+				88DD9EE11DD49BD8001BD5BE /* LogCell.swift in Sources */,
 				88DD9E911DD0C731001BD5BE /* MethodsDataSource.swift in Sources */,
 				88DD9E8E1DD0C5BA001BD5BE /* MethodsTableViewController.swift in Sources */,
 				88DD9E6E1DD0BDFC001BD5BE /* AppDelegate.swift in Sources */,

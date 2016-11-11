@@ -3,7 +3,7 @@ import CoreLocation
 
 class CellDecorator {
 
-    func decorate(_ cell: UITableViewCell, logEntry: LogEntry) {
+    func decorate(_ cell: LogCell, logEntry: LogEntry) {
         switch logEntry {
         case .didFinishLaunchingWithOptions(let launchOptions):
             cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)",
@@ -42,18 +42,6 @@ private extension CLAuthorizationStatus {
         case .denied: return bad
         case .restricted: return bad
         }
-    }
-    
-}
-
-private extension UITableViewCell {
-
-    func decorate(title: String,
-                  subtitle: String? = nil,
-                  subtitleColor: UIColor? = UIColor.black) {
-        textLabel?.text = title
-        detailTextLabel?.text = subtitle
-        detailTextLabel?.textColor = subtitleColor
     }
     
 }

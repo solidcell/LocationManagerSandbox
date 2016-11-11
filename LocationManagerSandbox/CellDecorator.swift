@@ -51,6 +51,28 @@ class CellDecorator {
 
 }
 
+private var dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm:ss"
+    return dateFormatter
+}()
+
+extension CLLocation {
+
+    override open var description: String {
+        return "\(coordinate)(\(horizontalAccuracy)) \(dateFormatter.string(from: timestamp)) \(altitude)(\(verticalAccuracy)) s\(speed) c\(course)"
+    }
+    
+}
+
+extension CLLocationCoordinate2D: CustomStringConvertible {
+
+    public var description: String {
+        return "\(latitude),\(longitude)"
+    }
+    
+}
+
 private extension UIColor {
 
     class var good: UIColor { return UIColor(rgb: 0x67AD65) }

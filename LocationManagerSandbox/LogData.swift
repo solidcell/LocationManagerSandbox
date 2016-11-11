@@ -5,6 +5,9 @@ enum LogEntry {
     // App Delegate
     case didFinishLaunchingWithOptions([UIApplicationLaunchOptionsKey: Any]?)
     // Location Manager
+    case requestWhenInUseAuthorization(NSDate)
+    case requestAlwaysAuthorization(NSDate)
+    case startUpdatingLocation(NSDate)
     case authorizationStatus(CLAuthorizationStatus)
     case locationServicesEnabled(Bool)
     // Location Manager Delegate

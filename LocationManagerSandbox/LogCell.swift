@@ -9,17 +9,18 @@ class LogCell: UITableViewCell {
 
     func decorate(title: String,
                   detail: CustomStringConvertible,
-                  detailColor: UIColor?) {
+                  detailColor: UIColor? = nil) {
         decorate(title: title, details: [detail], detailsColor: detailColor)
     }
 
     func decorate(title: String,
                   details: [CustomStringConvertible],
-                  detailsColor: UIColor! = UIColor.black) {
+                  detailsColor: UIColor? = nil) {
+        let _detailsColor = detailsColor ?? UIColor.black
 
         titleLabel.text = title
 
-        setDetails(details: details, color: detailsColor)
+        setDetails(details: details, color: _detailsColor)
     }
 
     private func setDetails(details: [CustomStringConvertible], color: UIColor) {

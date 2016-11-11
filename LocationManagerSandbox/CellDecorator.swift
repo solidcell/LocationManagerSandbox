@@ -9,6 +9,9 @@ class CellDecorator {
             let details = launchOptions?.flatMap { "\($0): \($1)" } ?? []
             cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)",
                           details: details)
+        case .requestWhenInUseAuthorization(let date):
+            cell.decorate(title: "requestWhenInUseAuthorization()",
+                          detail: date)
         case .didChangeAuthorization(let status):
             cell.decorate(title: "locationManager(_:didChangeAuthorization:)",
                           detail: status,
@@ -17,13 +20,19 @@ class CellDecorator {
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",
                           details: locations)
         case .authorizationStatus(let status):
-            cell.decorate(title: "authorizationStatus",
+            cell.decorate(title: "authorizationStatus()",
                           detail: status,
                           detailColor: status.color)
         case .locationServicesEnabled(let isEnabled):
-            cell.decorate(title: "locationServicesEnabled",
+            cell.decorate(title: "locationServicesEnabled()",
                           detail: isEnabled,
                           detailColor: isEnabled.color)
+        case .startUpdatingLocation(let date):
+            cell.decorate(title: "startUpdatingLocation()",
+                          detail: date)
+        case .requestAlwaysAuthorization(let date):
+            cell.decorate(title: "requestAlwaysAuthorization()",
+                          detail: date)
         }
     }
 

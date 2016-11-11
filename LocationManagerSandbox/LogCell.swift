@@ -39,6 +39,8 @@ class LogCell: UITableViewCell {
         detailLabel.text = text.description
         detailLabel.textColor = color
         detailLabel.font = UIFont.systemFont(ofSize: 14)
+        detailLabel.adjustsFontSizeToFitWidth = true
+        detailLabel.numberOfLines = 1
         detailsStackView.addArrangedSubview(detailLabel)
     }
 

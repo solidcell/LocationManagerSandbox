@@ -5,20 +5,28 @@ class MethodsTableViewController: UITableViewController {
     let data = MethodsData()
     var methodExecutor: MethodExecutor!
     
-    lazy var delegate: MethodsDelegate = {
-        return MethodsDelegate(data: self.data,
-                               executor: self.methodExecutor)
-    }()
-    
     lazy var dataSouce: MethodsDataSource = {
         return MethodsDataSource(data: self.data)
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "CLLocationManager"
 
         tableView.dataSource = dataSouce
-        tableView.delegate = delegate
+        tableView.delegate = self
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = data.sections[indexPath.row]
+        let dataSource = MethodSectionDataSource(methodSection: section)
+        let delegate = MethodSectionDelegate(methodSection: section,
+                                             executor: methodExecutor)
+        let methodSectionVC = MethodSectionTableViewController(delegate: delegate,
+                                                               dataSource: dataSource,
+                                                               title: section.name)
+        navigationController!.pushViewController(methodSectionVC, animated: true)
     }
 
 }

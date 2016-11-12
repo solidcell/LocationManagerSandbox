@@ -26,17 +26,5 @@ class MethodsData {
                          availabilitySection,
                          standardLocationUpdatesSection]
     }
-
-    func methodSection(at index: Int) -> MethodSection {
-        return sections[index]
-    }
-
-    func methodEnums(at index: Int) -> [MethodExecutor.MethodEnum] {
-        return methodSection(at: index).items
-    }
-
-    func methodItem(at indexPath: IndexPath) -> MethodExecutor.MethodEnum {
-        return methodEnums(at: indexPath.section)[indexPath.row]
-    }
     
 }

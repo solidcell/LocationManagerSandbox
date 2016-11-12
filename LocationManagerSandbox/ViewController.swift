@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let methodsVC = segue.destination as? MethodsTableViewController {
+        if let navVC = segue.destination as? UINavigationController,
+            let methodsVC = navVC.topViewController as? MethodsTableViewController {
             prepare(methodsTableViewController: methodsVC)
         } else if let logVC = segue.destination as? LogTableViewController {
             prepare(logTableViewController: logVC)

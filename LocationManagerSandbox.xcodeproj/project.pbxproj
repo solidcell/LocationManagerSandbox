@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		885408661DD7AEBA002E4A6E /* MethodSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */; };
+		885408681DD86E04002E4A6E /* MethodSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */; };
 		88DD9E6E1DD0BDFC001BD5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E6D1DD0BDFC001BD5BE /* AppDelegate.swift */; };
 		88DD9E701DD0BDFC001BD5BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E6F1DD0BDFC001BD5BE /* ViewController.swift */; };
 		88DD9E731DD0BDFC001BD5BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD9E711DD0BDFC001BD5BE /* Main.storyboard */; };
@@ -15,7 +17,7 @@
 		88DD9E831DD0BDFD001BD5BE /* LocationManagerSandboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E821DD0BDFD001BD5BE /* LocationManagerSandboxTests.swift */; };
 		88DD9E8E1DD0C5BA001BD5BE /* MethodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E8D1DD0C5BA001BD5BE /* MethodsTableViewController.swift */; };
 		88DD9E911DD0C731001BD5BE /* MethodsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E901DD0C731001BD5BE /* MethodsDataSource.swift */; };
-		88DD9E931DD0CB19001BD5BE /* MethodsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E921DD0CB19001BD5BE /* MethodsDelegate.swift */; };
+		88DD9E931DD0CB19001BD5BE /* MethodSectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E921DD0CB19001BD5BE /* MethodSectionDelegate.swift */; };
 		88DD9E951DD0CBD5001BD5BE /* MethodsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E941DD0CBD5001BD5BE /* MethodsData.swift */; };
 		88DD9E971DD0D0B4001BD5BE /* MethodExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E961DD0D0B4001BD5BE /* MethodExecutor.swift */; };
 		88DD9E991DD0D987001BD5BE /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E981DD0D987001BD5BE /* LogTableViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionTableViewController.swift; sourceTree = "<group>"; };
+		885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionDataSource.swift; sourceTree = "<group>"; };
 		88DD9E6A1DD0BDFC001BD5BE /* LocationManagerSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationManagerSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DD9E6D1DD0BDFC001BD5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DD9E6F1DD0BDFC001BD5BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +55,7 @@
 		88DD9E841DD0BDFD001BD5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88DD9E8D1DD0C5BA001BD5BE /* MethodsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodsTableViewController.swift; sourceTree = "<group>"; };
 		88DD9E901DD0C731001BD5BE /* MethodsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodsDataSource.swift; sourceTree = "<group>"; };
-		88DD9E921DD0CB19001BD5BE /* MethodsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodsDelegate.swift; sourceTree = "<group>"; };
+		88DD9E921DD0CB19001BD5BE /* MethodSectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionDelegate.swift; sourceTree = "<group>"; };
 		88DD9E941DD0CBD5001BD5BE /* MethodsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodsData.swift; sourceTree = "<group>"; };
 		88DD9E961DD0D0B4001BD5BE /* MethodExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodExecutor.swift; sourceTree = "<group>"; };
 		88DD9E981DD0D987001BD5BE /* LogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		885408641DD7AEA9002E4A6E /* Method Section */ = {
+			isa = PBXGroup;
+			children = (
+				885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */,
+				885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */,
+				88DD9E921DD0CB19001BD5BE /* MethodSectionDelegate.swift */,
+				88DD9E961DD0D0B4001BD5BE /* MethodExecutor.swift */,
+			);
+			name = "Method Section";
+			sourceTree = "<group>";
+		};
 		88DD9E611DD0BDFC001BD5BE = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +124,7 @@
 				88DD9E9F1DD0DB8C001BD5BE /* LocationManagerDelegate.swift */,
 				88DD9EA11DD0E5F2001BD5BE /* CLAuthorizationStatus.swift */,
 				88DD9E9A1DD0D9A6001BD5BE /* Log */,
-				88DD9E8F1DD0C721001BD5BE /* Methods */,
+				88DD9E8F1DD0C721001BD5BE /* All Methods */,
 				88DD9EDF1DD49A9F001BD5BE /* Extensions */,
 				88DD9E741DD0BDFC001BD5BE /* Assets.xcassets */,
 				88DD9E761DD0BDFC001BD5BE /* LaunchScreen.storyboard */,
@@ -127,16 +142,15 @@
 			path = LocationManagerSandboxTests;
 			sourceTree = "<group>";
 		};
-		88DD9E8F1DD0C721001BD5BE /* Methods */ = {
+		88DD9E8F1DD0C721001BD5BE /* All Methods */ = {
 			isa = PBXGroup;
 			children = (
 				88DD9E8D1DD0C5BA001BD5BE /* MethodsTableViewController.swift */,
 				88DD9E901DD0C731001BD5BE /* MethodsDataSource.swift */,
-				88DD9E921DD0CB19001BD5BE /* MethodsDelegate.swift */,
-				88DD9E961DD0D0B4001BD5BE /* MethodExecutor.swift */,
 				88DD9E941DD0CBD5001BD5BE /* MethodsData.swift */,
+				885408641DD7AEA9002E4A6E /* Method Section */,
 			);
-			name = Methods;
+			name = "All Methods";
 			sourceTree = "<group>";
 		};
 		88DD9E9A1DD0D9A6001BD5BE /* Log */ = {
@@ -273,11 +287,13 @@
 				88DD9E911DD0C731001BD5BE /* MethodsDataSource.swift in Sources */,
 				88DD9E8E1DD0C5BA001BD5BE /* MethodsTableViewController.swift in Sources */,
 				88DD9E6E1DD0BDFC001BD5BE /* AppDelegate.swift in Sources */,
-				88DD9E931DD0CB19001BD5BE /* MethodsDelegate.swift in Sources */,
+				88DD9E931DD0CB19001BD5BE /* MethodSectionDelegate.swift in Sources */,
 				88DD9EA61DD22118001BD5BE /* CellDecorator.swift in Sources */,
 				88DD9EA01DD0DB8C001BD5BE /* LocationManagerDelegate.swift in Sources */,
 				88DD9E9E1DD0DAA8001BD5BE /* LogData.swift in Sources */,
 				88DD9EA21DD0E5F2001BD5BE /* CLAuthorizationStatus.swift in Sources */,
+				885408661DD7AEBA002E4A6E /* MethodSectionTableViewController.swift in Sources */,
+				885408681DD86E04002E4A6E /* MethodSectionDataSource.swift in Sources */,
 				88DD9E971DD0D0B4001BD5BE /* MethodExecutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +504,7 @@
 				88DD9E891DD0BDFD001BD5BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88DD9E8A1DD0BDFD001BD5BE /* Build configuration list for PBXNativeTarget "LocationManagerSandboxTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +513,7 @@
 				88DD9E8C1DD0BDFD001BD5BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

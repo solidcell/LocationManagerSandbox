@@ -14,20 +14,12 @@ class MethodsDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MethodsDataSource.cellIdentifier,
                                                  for: indexPath)
-        cell.textLabel?.text = String(describing: data.methodItem(at: indexPath))
+        cell.textLabel?.text = data.sections[indexPath.row].name
         return cell
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return data.methodSection(at: section).name
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return data.sections.count
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.methodEnums(at: section).count
+        return data.sections.count
     }
     
 }

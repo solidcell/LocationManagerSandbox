@@ -16,4 +16,8 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
         logData.newEntry(.didUpdateLocations(locations))
     }
 
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        logData.newEntry(.didFailWithError(error))
+    }
+
 }

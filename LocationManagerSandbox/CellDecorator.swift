@@ -50,11 +50,19 @@ class CellDecorator {
         case .stopUpdatingLocation:
             cell.decorate(title: "stopUpdatingLocation()",
                           timestamp: timestamp)
+        case .requestLocation:
+            cell.decorate(title: "requestLocation()",
+                          timestamp: timestamp)
         // Location Manager Delegate
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",
                           timestamp: timestamp,
                           details: locations)
+        case .didFailWithError(let error):
+            cell.decorate(title: "locationManager(_:didFailWithError:)",
+                          timestamp: timestamp,
+                          detail: String(describing: error),
+                          detailColor: UIColor.bad)
         case .didChangeAuthorization(let status):
             cell.decorate(title: "locationManager(_:didChangeAuthorization:)",
                           timestamp: timestamp,

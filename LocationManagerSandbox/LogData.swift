@@ -30,9 +30,11 @@ enum LogMethod {
         // Initiating Standard Location Updates
     case startUpdatingLocation
     case stopUpdatingLocation
+    case requestLocation
     
     // Location Manager Delegate
     case didUpdateLocations([CLLocation])
+    case didFailWithError(Error)
     case didChangeAuthorization(CLAuthorizationStatus)
 }
 

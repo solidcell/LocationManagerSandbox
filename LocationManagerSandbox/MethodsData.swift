@@ -18,7 +18,8 @@ class MethodsData {
     private let standardLocationUpdatesSection = MethodSection(name: "Standard Location Updates",
                                                                items: [.startUpdatingLocation,
                                                                        .stopUpdatingLocation,
-                                                                       .requestLocation])
+                                                                       .requestLocation,
+                                                                       .pausesLocationUpdatesAutomatically])
 
     let sections: [MethodSection]
 

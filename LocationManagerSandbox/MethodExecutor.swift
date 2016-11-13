@@ -10,6 +10,7 @@ class MethodExecutor {
         case startUpdatingLocation
         case stopUpdatingLocation
         case requestLocation
+        case pausesLocationUpdatesAutomatically
     }
 
     fileprivate let locationManager: CLLocationManager
@@ -30,6 +31,7 @@ class MethodExecutor {
         case .startUpdatingLocation: startUpdatingLocation()
         case .stopUpdatingLocation: stopUpdatingLocation()
         case .requestLocation: requestLocation()
+        case .pausesLocationUpdatesAutomatically: pausesLocationUpdatesAutomatically()
         }
     }
     
@@ -70,6 +72,11 @@ fileprivate extension MethodExecutor {
     func requestLocation() {
         locationManager.requestLocation()
         logData.newEntry(.requestLocation)
+    }
+
+    func pausesLocationUpdatesAutomatically() {
+        let result = locationManager.pausesLocationUpdatesAutomatically
+        logData.newEntry(.pausesLocationUpdatesAutomatically(result))
     }
     
 }

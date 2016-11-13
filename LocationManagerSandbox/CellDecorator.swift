@@ -40,6 +40,9 @@ class CellDecorator {
             cell.decorate(title: "stopUpdatingLocation()")
         case .requestLocation:
             cell.decorate(title: "requestLocation()")
+        case .pausesLocationUpdatesAutomatically(let pauses):
+            cell.decorate(title: "pausesLocationUpdatesAutomatically",
+                          detail: pauses)
         // Location Manager Delegate
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",

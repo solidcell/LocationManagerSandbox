@@ -25,9 +25,38 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4TM-9e-hLP">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyn-Xh-US3" customClass="DotView" customModule="LocationManagerSandbox" customModuleProvider="target">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="5" id="h0Z-fS-Hg3"/>
+                                            <constraint firstAttribute="height" constant="5" id="pQh-sC-djc"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDk-uw-og1" customClass="DotView" customModule="LocationManagerSandbox" customModuleProvider="target">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="5" id="uqc-MR-8wm"/>
+                                            <constraint firstAttribute="height" constant="5" id="z9U-PL-5SO"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8k-dv-xi0" customClass="DotView" customModule="LocationManagerSandbox" customModuleProvider="target">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="BMR-VH-D4Q"/>
+                                            <constraint firstAttribute="width" constant="5" id="Tqv-Vn-PjL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Y8k-dv-xi0" firstAttribute="centerY" secondItem="kyn-Xh-US3" secondAttribute="centerY" id="Cnt-tJ-TIc"/>
+                                    <constraint firstItem="kyn-Xh-US3" firstAttribute="centerY" secondItem="4TM-9e-hLP" secondAttribute="centerY" id="I45-C1-3BW"/>
+                                    <constraint firstItem="Y8k-dv-xi0" firstAttribute="leading" secondItem="kyn-Xh-US3" secondAttribute="trailing" constant="8" id="OXp-nX-7QL"/>
+                                    <constraint firstItem="LDk-uw-og1" firstAttribute="centerY" secondItem="kyn-Xh-US3" secondAttribute="centerY" id="XPF-7d-HQN"/>
+                                    <constraint firstItem="kyn-Xh-US3" firstAttribute="leading" secondItem="LDk-uw-og1" secondAttribute="trailing" constant="8" id="XRt-vt-0PZ"/>
                                     <constraint firstAttribute="height" constant="15" id="dPa-ed-gcM"/>
+                                    <constraint firstItem="kyn-Xh-US3" firstAttribute="centerX" secondItem="4TM-9e-hLP" secondAttribute="centerX" id="iAB-5L-KTv"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixS-E2-aDt" userLabel="Methods">

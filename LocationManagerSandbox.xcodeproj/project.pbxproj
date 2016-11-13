@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		885408661DD7AEBA002E4A6E /* MethodSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */; };
 		885408681DD86E04002E4A6E /* MethodSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */; };
+		88D171681DD8C2C200D77D9B /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D171671DD8C2C200D77D9B /* DotView.swift */; };
 		88DD9E6E1DD0BDFC001BD5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E6D1DD0BDFC001BD5BE /* AppDelegate.swift */; };
 		88DD9E701DD0BDFC001BD5BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E6F1DD0BDFC001BD5BE /* ViewController.swift */; };
 		88DD9E731DD0BDFC001BD5BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD9E711DD0BDFC001BD5BE /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionTableViewController.swift; sourceTree = "<group>"; };
 		885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionDataSource.swift; sourceTree = "<group>"; };
+		88D171671DD8C2C200D77D9B /* DotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
 		88DD9E6A1DD0BDFC001BD5BE /* LocationManagerSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationManagerSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DD9E6D1DD0BDFC001BD5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DD9E6F1DD0BDFC001BD5BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				88DD9E6F1DD0BDFC001BD5BE /* ViewController.swift */,
 				88DD9E9F1DD0DB8C001BD5BE /* LocationManagerDelegate.swift */,
 				88DD9EA11DD0E5F2001BD5BE /* CLAuthorizationStatus.swift */,
+				88D171671DD8C2C200D77D9B /* DotView.swift */,
 				88DD9E9A1DD0D9A6001BD5BE /* Log */,
 				88DD9E8F1DD0C721001BD5BE /* All Methods */,
 				88DD9EDF1DD49A9F001BD5BE /* Extensions */,
@@ -280,6 +283,7 @@
 			files = (
 				88DD9E9C1DD0D9EB001BD5BE /* LogDataSource.swift in Sources */,
 				88DD9EDE1DD49A9B001BD5BE /* UIColor.swift in Sources */,
+				88D171681DD8C2C200D77D9B /* DotView.swift in Sources */,
 				88DD9E991DD0D987001BD5BE /* LogTableViewController.swift in Sources */,
 				88DD9E951DD0CBD5001BD5BE /* MethodsData.swift in Sources */,
 				88DD9E701DD0BDFC001BD5BE /* ViewController.swift in Sources */,

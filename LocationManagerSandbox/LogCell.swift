@@ -8,33 +8,29 @@ class LogCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsStackView: UIStackView!
 
-    func decorate(title: String,
-                  timestamp: String) {
+    func decorate(title: String) {
         decorate(title: title,
-                 timestamp: timestamp,
                  details: [])
     }
 
     func decorate(title: String,
-                  timestamp: String,
                   detail: CustomStringConvertible,
                   detailColor: UIColor? = nil) {
         decorate(title: title,
-                 timestamp: timestamp,
                  details: [detail],
                  detailsColor: detailColor)
     }
 
     func decorate(title: String,
-                  timestamp: String,
                   details: [CustomStringConvertible],
                   detailsColor: UIColor? = nil) {
         let _detailsColor = detailsColor ?? UIColor.black
-
-        timestampLabel.text = timestamp
         titleLabel.text = title
-
         setDetails(details: details, color: _detailsColor)
+    }
+
+    func decorate(timestamp: String) {
+        timestampLabel.text = timestamp
     }
 
 }

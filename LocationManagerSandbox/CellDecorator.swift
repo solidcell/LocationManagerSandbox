@@ -4,68 +4,52 @@ import CoreLocation
 class CellDecorator {
 
     func decorate(_ cell: LogCell, logEntry: LogEntry) {
-        let timestamp = logEntry.timestamp.formatted
+        cell.decorate(timestamp: logEntry.timestamp.formatted)
         switch logEntry.method {
         // App Delegate
         case .didFinishLaunchingWithOptions(let launchOptions):
             let details = launchOptions?.flatMap { "\($0): \($1)" } ?? []
             cell.decorate(title: "application(_:didFinishLaunchingWithOptions:)",
-                          timestamp: timestamp,
                           details: details)
         case .applicationDidEnterBackground:
-            cell.decorate(title: "applicationDidEnterBackground(_:)",
-                          timestamp: timestamp)
+            cell.decorate(title: "applicationDidEnterBackground(_:)")
         case .applicationWillResignActive:
-            cell.decorate(title: "applicationWillResignActive(_:)",
-                          timestamp: timestamp)
+            cell.decorate(title: "applicationWillResignActive(_:)")
         case .applicationWillEnterForeground:
-            cell.decorate(title: "applicationWillEnterForeground(_:)",
-                          timestamp: timestamp)
+            cell.decorate(title: "applicationWillEnterForeground(_:)")
         case .applicationDidBecomeActive:
-            cell.decorate(title: "applicationDidBecomeActive(_:)",
-                          timestamp: timestamp)
+            cell.decorate(title: "applicationDidBecomeActive(_:)")
         case .applicationWillTerminate:
-            cell.decorate(title: "applicationWillTerminate(_:)",
-                          timestamp: timestamp)
+            cell.decorate(title: "applicationWillTerminate(_:)")
         // Location Manager
         case .requestWhenInUseAuthorization:
-            cell.decorate(title: "requestWhenInUseAuthorization()",
-                          timestamp: timestamp)
+            cell.decorate(title: "requestWhenInUseAuthorization()")
         case .requestAlwaysAuthorization:
-            cell.decorate(title: "requestAlwaysAuthorization()",
-                          timestamp: timestamp)
+            cell.decorate(title: "requestAlwaysAuthorization()")
         case .authorizationStatus(let status):
             cell.decorate(title: "authorizationStatus()",
-                          timestamp: timestamp,
                           detail: status,
                           detailColor: status.color)
         case .locationServicesEnabled(let isEnabled):
             cell.decorate(title: "locationServicesEnabled()",
-                          timestamp: timestamp,
                           detail: isEnabled,
                           detailColor: isEnabled.color)
         case .startUpdatingLocation:
-            cell.decorate(title: "startUpdatingLocation()",
-                          timestamp: timestamp)
+            cell.decorate(title: "startUpdatingLocation()")
         case .stopUpdatingLocation:
-            cell.decorate(title: "stopUpdatingLocation()",
-                          timestamp: timestamp)
+            cell.decorate(title: "stopUpdatingLocation()")
         case .requestLocation:
-            cell.decorate(title: "requestLocation()",
-                          timestamp: timestamp)
+            cell.decorate(title: "requestLocation()")
         // Location Manager Delegate
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",
-                          timestamp: timestamp,
                           details: locations)
         case .didFailWithError(let error):
             cell.decorate(title: "locationManager(_:didFailWithError:)",
-                          timestamp: timestamp,
                           detail: String(describing: error),
                           detailColor: UIColor.bad)
         case .didChangeAuthorization(let status):
             cell.decorate(title: "locationManager(_:didChangeAuthorization:)",
-                          timestamp: timestamp,
                           detail: status,
                           detailColor: status.color)
         }

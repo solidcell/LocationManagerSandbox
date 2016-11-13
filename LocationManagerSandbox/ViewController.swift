@@ -5,6 +5,9 @@ class ViewController: UIViewController {
 
     private let locationManager = CLLocationManager()
     let logData = LogData()
+
+    @IBOutlet weak var separatorBar: UIView!
+    @IBOutlet weak var separatorBarOffset: NSLayoutConstraint!
     
     private lazy var locationManagerDelegate: LocationManagerDelegate = {
         return LocationManagerDelegate(logData: self.logData)
@@ -14,6 +17,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         locationManager.delegate = locationManagerDelegate
+        let separatorBarPan = UIPanGestureRecognizer(target: self, action: #selector(didPanSeparatorBar(_:)))
+        separatorBar.addGestureRecognizer(separatorBarPan)
+    }
+
+    var separatorPanStartOffset: CGFloat?
+
+    func didPanSeparatorBar(_ panGestureRecognizer: UIPanGestureRecognizer) {
+        switch panGestureRecognizer.state {
+        case .began:
+            separatorPanStartOffset = separatorBarOffset.constant
+        case .ended:
+            separatorPanStartOffset = nil
+        case .changed:
+            let delta = panGestureRecognizer.translation(in: view).y
+            let offset = separatorPanStartOffset! + delta
+            separatorBarOffset.constant = offset
+        default:
+            fatalError("what other things do we need to handle?")
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -19,31 +19,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixS-E2-aDt">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Ky7-KX-5e1"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="8Mq-Al-qSu" kind="embed" id="0e4-qd-Gqw"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrO-vi-dnO">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrO-vi-dnO" userLabel="Logs">
                                 <connections>
                                     <segue destination="dsw-IX-WkD" kind="embed" id="Zpb-OD-8Ri"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4TM-9e-hLP">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="dPa-ed-gcM"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixS-E2-aDt" userLabel="Methods">
+                                <connections>
+                                    <segue destination="8Mq-Al-qSu" kind="embed" id="0e4-qd-Gqw"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="4TM-9e-hLP" firstAttribute="top" secondItem="QrO-vi-dnO" secondAttribute="bottom" id="7Ai-Y8-nsF"/>
                             <constraint firstItem="QrO-vi-dnO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8zk-4i-Qbr"/>
                             <constraint firstItem="QrO-vi-dnO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AfC-Lv-Rhv"/>
                             <constraint firstAttribute="trailing" secondItem="ixS-E2-aDt" secondAttribute="trailing" id="D5G-S2-S6o"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ixS-E2-aDt" secondAttribute="bottom" id="G8O-nG-NKb"/>
-                            <constraint firstItem="ixS-E2-aDt" firstAttribute="top" secondItem="QrO-vi-dnO" secondAttribute="bottom" id="R4c-lt-Ibr"/>
+                            <constraint firstItem="4TM-9e-hLP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="382" id="Gwi-yp-voS"/>
+                            <constraint firstItem="4TM-9e-hLP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LrM-f2-ABr"/>
+                            <constraint firstAttribute="trailing" secondItem="4TM-9e-hLP" secondAttribute="trailing" id="OpR-qT-Jmk"/>
                             <constraint firstAttribute="trailing" secondItem="QrO-vi-dnO" secondAttribute="trailing" id="g6Z-Wg-00N"/>
+                            <constraint firstItem="ixS-E2-aDt" firstAttribute="top" secondItem="4TM-9e-hLP" secondAttribute="bottom" id="the-CI-Z74"/>
                             <constraint firstItem="ixS-E2-aDt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yXz-yM-EEg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="separatorBar" destination="4TM-9e-hLP" id="WzC-Rc-rXL"/>
+                        <outlet property="separatorBarOffset" destination="Gwi-yp-voS" id="P4o-CC-hIr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,7 +65,7 @@
             <objects>
                 <tableViewController id="dsw-IX-WkD" customClass="LogTableViewController" customModule="LocationManagerSandbox" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sVz-SJ-BHC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="382"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -62,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OUM-RX-bhG" id="dBw-Kc-oGE">
-                                    <frame key="frameInset" width="375" height="110"/>
+                                    <frame key="frameInset" width="375" height="110.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qen-lf-l5K">
@@ -106,7 +117,7 @@
             <objects>
                 <tableViewController id="bCt-AP-CvQ" customClass="MethodsTableViewController" customModule="LocationManagerSandbox" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Et5-Cm-BSg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -114,7 +125,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TLr-nU-GNl" id="8dL-tm-Mcx">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

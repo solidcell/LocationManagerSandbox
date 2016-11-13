@@ -32,7 +32,9 @@ class ViewController: UIViewController {
         case .changed:
             let delta = panGestureRecognizer.translation(in: view).y
             let offset = separatorPanStartOffset! + delta
-            separatorBarOffset.constant = offset
+            if offset >= 40 && offset <= view.bounds.height - 80 {
+                separatorBarOffset.constant = offset
+            }
         default:
             fatalError("what other things do we need to handle?")
         }

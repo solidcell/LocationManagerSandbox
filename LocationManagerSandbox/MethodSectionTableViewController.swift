@@ -21,6 +21,11 @@ class MethodSectionTableViewController: UITableViewController {
         dataSource.configure(for: tableView)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }

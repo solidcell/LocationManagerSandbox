@@ -19,18 +19,23 @@ class MethodsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController!.setNavigationBarHidden(true, animated: true)
     }
 
+    var segueingToSection: MethodsData.MethodSection?
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let section = data.sections[indexPath.row]
-        let dataSource = MethodSectionDataSource(methodSection: section)
-        let delegate = MethodSectionDelegate(methodSection: section,
-                                             executor: methodExecutor)
-        let methodSectionVC = MethodSectionTableViewController(delegate: delegate,
-                                                               dataSource: dataSource,
-                                                               title: section.name)
-        navigationController!.pushViewController(methodSectionVC, animated: true)
+        segueingToSection = data.sections[indexPath.row]
+        performSegue(withIdentifier: "segueToMethodSection", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let methodSectionVC = segue.destination as! MethodSectionTableViewController
+        let section = segueingToSection!
+        methodSectionVC.dataSource = MethodSectionDataSource(methodSection: section)
+        methodSectionVC.delegate = MethodSectionDelegate(methodSection: section,
+                                                         executor: methodExecutor)
+        methodSectionVC.title = section.name
     }
 
 }

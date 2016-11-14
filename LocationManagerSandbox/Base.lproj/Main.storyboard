@@ -179,13 +179,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rkp-X1-45n">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActionCellIdentifier" id="Rkp-X1-45n">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rkp-X1-45n" id="VRg-O5-KjE">
                                     <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetGetCellIdentifier" id="z1E-rz-ySu" customClass="SetGetTableViewCell" customModule="LocationManagerSandbox" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z1E-rz-ySu" id="K8z-Gw-vpk">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WVb-hx-YK2">
+                                            <connections>
+                                                <action selector="switchAction:" destination="z1E-rz-ySu" eventType="valueChanged" id="gSn-3T-9fy"/>
+                                            </connections>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="allowsBackgroundLocationUpdates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vX-UY-DoU">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WVb-hx-YK2" firstAttribute="leading" secondItem="8vX-UY-DoU" secondAttribute="trailing" constant="8" id="3cX-lO-FX0"/>
+                                        <constraint firstItem="8vX-UY-DoU" firstAttribute="leading" secondItem="K8z-Gw-vpk" secondAttribute="leadingMargin" constant="8" id="8TP-FI-HoR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="WVb-hx-YK2" secondAttribute="trailing" constant="8" id="BRC-Ja-gnk"/>
+                                        <constraint firstItem="WVb-hx-YK2" firstAttribute="centerY" secondItem="K8z-Gw-vpk" secondAttribute="centerY" id="CkT-bP-L2j"/>
+                                        <constraint firstItem="8vX-UY-DoU" firstAttribute="centerY" secondItem="K8z-Gw-vpk" secondAttribute="centerY" id="Qon-vu-cva"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="switchOutlet" destination="WVb-hx-YK2" id="uRa-bu-3qy"/>
+                                    <outlet property="titleLabel" destination="8vX-UY-DoU" id="yi3-PW-ACm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

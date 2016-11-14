@@ -8,7 +8,7 @@ class MethodSectionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = delegate
-        dataSource.configure(for: tableView)
+        tableView.dataSource = dataSource
     }
 
     override func viewWillAppear(_ animated: Bool) {

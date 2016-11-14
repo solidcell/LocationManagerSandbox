@@ -32,7 +32,8 @@ class MethodsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let methodSectionVC = segue.destination as! MethodSectionTableViewController
         let section = segueingToSection!
-        methodSectionVC.dataSource = MethodSectionDataSource(methodSection: section)
+        methodSectionVC.dataSource = MethodSectionDataSource(methodSection: section,
+                                                             executor: methodExecutor)
         methodSectionVC.delegate = MethodSectionDelegate(methodSection: section,
                                                          executor: methodExecutor)
         methodSectionVC.title = section.name

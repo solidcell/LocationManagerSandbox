@@ -31,7 +31,8 @@ enum LogMethod {
     case startUpdatingLocation
     case stopUpdatingLocation
     case requestLocation
-    case pausesLocationUpdatesAutomatically(Bool)
+    case pausesLocationUpdatesAutomaticallySet(Bool)
+    case pausesLocationUpdatesAutomaticallyGet(Bool)
     
     // Location Manager Delegate
     case didUpdateLocations([CLLocation])

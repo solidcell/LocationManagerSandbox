@@ -36,10 +36,22 @@ class MethodExecutor {
         case .requestLocation: requestLocation()
         }
     }
-
+    
     func get(_ variable: BoolEnum) {
         switch variable {
-        case .pausesLocationUpdatesAutomatically: pausesLocationUpdatesAutomatically()
+        case .pausesLocationUpdatesAutomatically: pausesLocationUpdatesAutomaticallyGet()
+        }
+    }
+
+    func set(_ variable: BoolEnum, value: Bool) {
+        switch variable {
+        case .pausesLocationUpdatesAutomatically: return pausesLocationUpdatesAutomaticallySet(value)
+        }
+    }
+
+    func value(_ variable: BoolEnum) -> Bool {
+        switch variable {
+        case .pausesLocationUpdatesAutomatically: return pausesLocationUpdatesAutomatically
         }
     }
     
@@ -86,9 +98,18 @@ fileprivate extension MethodExecutor {
 
 fileprivate extension MethodExecutor {
 
-    func pausesLocationUpdatesAutomatically() {
-        let result = locationManager.pausesLocationUpdatesAutomatically
-        logData.newEntry(.pausesLocationUpdatesAutomatically(result))
+    func pausesLocationUpdatesAutomaticallySet(_ value: Bool) {
+        locationManager.pausesLocationUpdatesAutomatically = value
+        logData.newEntry(.pausesLocationUpdatesAutomaticallySet(value))
+    }
+
+    func pausesLocationUpdatesAutomaticallyGet() {
+        let result = pausesLocationUpdatesAutomatically
+        logData.newEntry(.pausesLocationUpdatesAutomaticallyGet(result))
+    }
+
+    var pausesLocationUpdatesAutomatically: Bool {
+        return locationManager.pausesLocationUpdatesAutomatically
     }
     
 }

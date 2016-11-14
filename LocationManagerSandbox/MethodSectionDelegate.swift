@@ -14,8 +14,13 @@ class MethodSectionDelegate: NSObject, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let method = methodSection.items[indexPath.row]
-        executor.execute(method)
+        let methodItem = methodSection.items[indexPath.row]
+        switch methodItem {
+        case .action(let method):
+            executor.execute(method)
+        case .setGet(let variable):
+            executor.get(variable)
+        }
     }
     
 }

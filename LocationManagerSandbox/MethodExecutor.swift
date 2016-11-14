@@ -10,6 +10,9 @@ class MethodExecutor {
         case startUpdatingLocation
         case stopUpdatingLocation
         case requestLocation
+    }
+
+    enum BoolEnum {
         case pausesLocationUpdatesAutomatically
     }
 
@@ -31,6 +34,11 @@ class MethodExecutor {
         case .startUpdatingLocation: startUpdatingLocation()
         case .stopUpdatingLocation: stopUpdatingLocation()
         case .requestLocation: requestLocation()
+        }
+    }
+
+    func get(_ variable: BoolEnum) {
+        switch variable {
         case .pausesLocationUpdatesAutomatically: pausesLocationUpdatesAutomatically()
         }
     }
@@ -73,6 +81,10 @@ fileprivate extension MethodExecutor {
         locationManager.requestLocation()
         logData.newEntry(.requestLocation)
     }
+
+}
+
+fileprivate extension MethodExecutor {
 
     func pausesLocationUpdatesAutomatically() {
         let result = locationManager.pausesLocationUpdatesAutomatically

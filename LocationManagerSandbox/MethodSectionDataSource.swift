@@ -22,7 +22,13 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MethodSectionDataSource.cellIdentifier,
                                                  for: indexPath)
-        cell.textLabel?.text = String(describing: methodSection.items[indexPath.row])
+        let methodItem = methodSection.items[indexPath.row]
+        switch methodItem {
+        case .action(let method):
+            cell.textLabel?.text = String(describing: method)
+        case .setGet(let variable):
+            cell.textLabel?.text = String(describing: variable)
+        }
         return cell
     }
 

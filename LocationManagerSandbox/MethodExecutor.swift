@@ -16,6 +16,10 @@ class MethodExecutor {
         case pausesLocationUpdatesAutomatically
     }
 
+    enum LocationDistanceEnum {
+        case distanceFilter
+    }
+
     fileprivate let locationManager: CLLocationManager
     fileprivate let logData: LogData
 
@@ -103,8 +107,7 @@ extension MethodExecutor {
     }
 
     private func pausesLocationUpdatesAutomaticallyLog() {
-        let result = pausesLocationUpdatesAutomatically
-        logData.newEntry(.pausesLocationUpdatesAutomaticallyGet(result))
+        logData.newEntry(.pausesLocationUpdatesAutomaticallyGet(pausesLocationUpdatesAutomatically))
     }
 
     private func pausesLocationUpdatesAutomaticallySet(_ value: Bool) {
@@ -112,4 +115,39 @@ extension MethodExecutor {
         logData.newEntry(.pausesLocationUpdatesAutomaticallySet(value))
     }
 
+}
+
+extension MethodExecutor {
+
+    func set(_ locationDistance: LocationDistanceEnum, _ value: CLLocationDistance) {
+        switch locationDistance {
+        case .distanceFilter: return distanceFilterSet(value)
+        }
+    }
+
+    func get(_ locationDistance: LocationDistanceEnum) -> CLLocationDistance {
+        switch locationDistance {
+        case .distanceFilter: return distanceFilter
+        }
+    }
+
+    func log(_ locationDistance: LocationDistanceEnum) {
+        switch locationDistance {
+        case .distanceFilter: return distanceFilterLog()
+        }
+    }
+
+    private var distanceFilter: CLLocationDistance {
+        return locationManager.distanceFilter
+    }
+
+    private func distanceFilterLog() {
+        logData.newEntry(.distanceFilterGet(distanceFilter))
+    }
+
+    private func distanceFilterSet(_ value: CLLocationDistance) {
+        locationManager.distanceFilter = value
+        logData.newEntry(.distanceFilterSet(value))
+    }
+    
 }

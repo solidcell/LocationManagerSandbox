@@ -46,6 +46,12 @@ class CellDecorator {
         case .pausesLocationUpdatesAutomaticallyGet(let pauses):
             cell.decorate(title: "pausesLocationUpdatesAutomatically",
                           detail: pauses)
+        case .distanceFilterSet(let value):
+            cell.decorate(title: "distanceFilter =",
+                          detail: value)
+        case .distanceFilterGet(let value):
+            cell.decorate(title: "distanceFilter",
+                          detail: value)
         // Location Manager Delegate
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",

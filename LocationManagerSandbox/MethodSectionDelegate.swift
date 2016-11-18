@@ -18,6 +18,7 @@ class MethodSectionDelegate: NSObject, UITableViewDelegate {
         switch methodItem {
         case .method(let method): executor.execute(method)
         case .boolean(let boolean): executor.log(boolean)
+        case .locationDistance(let locationDistance): executor.log(locationDistance)
         }
     }
     

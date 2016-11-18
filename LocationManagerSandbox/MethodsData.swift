@@ -10,6 +10,7 @@ class MethodsData {
     enum MethodItem {
         case method(MethodExecutor.MethodEnum)
         case boolean(MethodExecutor.BoolEnum)
+        case locationDistance(MethodExecutor.LocationDistanceEnum)
     }
 
     private let authorizationSection =
@@ -27,7 +28,8 @@ class MethodsData {
                       items: [.method(.startUpdatingLocation),
                               .method(.stopUpdatingLocation),
                               .method(.requestLocation),
-                              .boolean(.pausesLocationUpdatesAutomatically)])
+                              .boolean(.pausesLocationUpdatesAutomatically),
+                              .locationDistance(.distanceFilter)])
 
     let sections: [MethodSection]
 

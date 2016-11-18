@@ -1,6 +1,8 @@
 import UIKit
 
-class SetGetTableViewCell: UITableViewCell {
+class BooleanCell: UITableViewCell {
+    
+    static let cellIdentifier = "BooleanCellIdentifier"
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var switchOutlet: UISwitch!

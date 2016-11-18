@@ -5,7 +5,6 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
     var methodSection: MethodsData.MethodSection
     var executor: MethodExecutor
     private static let actionCellIdentifier = "ActionCellIdentifier"
-    private static let setGetCellIdentifier = "SetGetCellIdentifier"
 
     init(methodSection: MethodsData.MethodSection,
          executor: MethodExecutor) {
@@ -21,16 +20,22 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
         let methodItem = methodSection.items[indexPath.row]
         switch methodItem {
         case .method(let method):
-            let cell = tableView.dequeueReusableCell(withIdentifier: MethodSectionDataSource.actionCellIdentifier,
-                                                     for: indexPath)
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: MethodSectionDataSource.actionCellIdentifier,
+                for: indexPath)
             cell.textLabel?.text = String(describing: method)
             return cell
         case .boolean(let boolean):
-            let cell = tableView.dequeueReusableCell(withIdentifier: MethodSectionDataSource.setGetCellIdentifier,
-                                                     for: indexPath) as! SetGetTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: BooleanCell.cellIdentifier,
+                                                     for: indexPath) as! BooleanCell
             cell.titleLabel.text = String(describing: boolean)
             cell.getValue = { [weak executor] in return executor?.get(boolean) }
             cell.switchCallback = { [weak executor] in executor?.set(boolean, $0) }
+            return cell
+        case .locationDistance(let locationDistance):
+            let cell = tableView.dequeueReusableCell(withIdentifier: VariableCell.cellIdentifier,
+                                                     for: indexPath) as! VariableCell
+            cell.titleLabel.text = String(describing: locationDistance)
             return cell
         }
     }

@@ -179,19 +179,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActionCellIdentifier" id="Rkp-X1-45n">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActionCellIdentifier" id="Rkp-X1-45n" userLabel="Action Cell">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rkp-X1-45n" id="VRg-O5-KjE">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetGetCellIdentifier" id="z1E-rz-ySu" customClass="SetGetTableViewCell" customModule="LocationManagerSandbox" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BooleanCellIdentifier" id="z1E-rz-ySu" userLabel="Boolean Cell" customClass="BooleanCell" customModule="LocationManagerSandbox" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z1E-rz-ySu" id="K8z-Gw-vpk">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WVb-hx-YK2">
@@ -216,6 +216,36 @@
                                 <connections>
                                     <outlet property="switchOutlet" destination="WVb-hx-YK2" id="uRa-bu-3qy"/>
                                     <outlet property="titleLabel" destination="8vX-UY-DoU" id="yi3-PW-ACm"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VariableCellIdentifier" id="FnL-P1-A62" userLabel="Variable Cell" customClass="VariableCell" customModule="LocationManagerSandbox" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="180" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FnL-P1-A62" id="FPd-OX-AmA">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="distanceFilter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6C-W9-Lj7">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUT-0x-S2A">
+                                            <state key="normal" title="Edit"/>
+                                            <connections>
+                                                <action selector="didTapEditButtonWithSender:" destination="FnL-P1-A62" eventType="touchUpInside" id="GSG-cW-pJq"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qUT-0x-S2A" firstAttribute="centerY" secondItem="f6C-W9-Lj7" secondAttribute="centerY" id="A1D-IG-YOK"/>
+                                        <constraint firstItem="f6C-W9-Lj7" firstAttribute="leading" secondItem="FPd-OX-AmA" secondAttribute="leadingMargin" constant="8" id="Ndc-sP-KgK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qUT-0x-S2A" secondAttribute="trailing" constant="8" id="rDV-6P-6WU"/>
+                                        <constraint firstItem="f6C-W9-Lj7" firstAttribute="centerY" secondItem="FPd-OX-AmA" secondAttribute="centerY" id="tq6-8v-fRw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="f6C-W9-Lj7" id="aNS-MH-dRZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

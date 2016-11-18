@@ -2,11 +2,18 @@ import UIKit
 
 class InputAccessoryView: UIView {
 
+    weak var delegate: InputAccessoryViewDelegate?
+
     @IBAction func didTapCancel(_: UIButton) {
-        print("cancel")
+        delegate?.didTapCancel()
     }
 
     @IBAction func didTapDone(_: UIButton) {
-        print("done")
+        delegate?.didTapDone()
     }
+}
+
+protocol InputAccessoryViewDelegate: class {
+    func didTapCancel()
+    func didTapDone()
 }

@@ -11,6 +11,7 @@
 		881282511DDF65B40046C77C /* InputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881282501DDF65B40046C77C /* InputAccessoryView.xib */; };
 		881282531DDF665B0046C77C /* InputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881282521DDF665B0046C77C /* InputAccessoryView.swift */; };
 		881282551DDF71000046C77C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881282541DDF71000046C77C /* UIView.swift */; };
+		881282581DDF9A740046C77C /* InputViewDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881282571DDF9A740046C77C /* InputViewDisplayer.swift */; };
 		885408661DD7AEBA002E4A6E /* MethodSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */; };
 		885408681DD86E04002E4A6E /* MethodSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */; };
 		88D171681DD8C2C200D77D9B /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D171671DD8C2C200D77D9B /* DotView.swift */; };
@@ -51,6 +52,7 @@
 		881282501DDF65B40046C77C /* InputAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputAccessoryView.xib; sourceTree = "<group>"; };
 		881282521DDF665B0046C77C /* InputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAccessoryView.swift; sourceTree = "<group>"; };
 		881282541DDF71000046C77C /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		881282571DDF9A740046C77C /* InputViewDisplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewDisplayer.swift; sourceTree = "<group>"; };
 		885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionTableViewController.swift; sourceTree = "<group>"; };
 		885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionDataSource.swift; sourceTree = "<group>"; };
 		88D171671DD8C2C200D77D9B /* DotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
@@ -98,14 +100,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		881282561DDF9A560046C77C /* Input View */ = {
+			isa = PBXGroup;
+			children = (
+				881282501DDF65B40046C77C /* InputAccessoryView.xib */,
+				881282521DDF665B0046C77C /* InputAccessoryView.swift */,
+				881282571DDF9A740046C77C /* InputViewDisplayer.swift */,
+			);
+			name = "Input View";
+			sourceTree = "<group>";
+		};
 		885408641DD7AEA9002E4A6E /* Method Section */ = {
 			isa = PBXGroup;
 			children = (
 				885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */,
 				88D171691DD9C26400D77D9B /* BooleanCell.swift */,
 				8812824E1DDF531E0046C77C /* VariableCell.swift */,
-				881282501DDF65B40046C77C /* InputAccessoryView.xib */,
-				881282521DDF665B0046C77C /* InputAccessoryView.swift */,
+				881282561DDF9A560046C77C /* Input View */,
 				885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */,
 				88DD9E921DD0CB19001BD5BE /* MethodSectionDelegate.swift */,
 				88DD9E961DD0D0B4001BD5BE /* MethodExecutor.swift */,
@@ -304,6 +315,7 @@
 				88D171681DD8C2C200D77D9B /* DotView.swift in Sources */,
 				88DD9E991DD0D987001BD5BE /* LogTableViewController.swift in Sources */,
 				88DD9E951DD0CBD5001BD5BE /* MethodsData.swift in Sources */,
+				881282581DDF9A740046C77C /* InputViewDisplayer.swift in Sources */,
 				88DD9E701DD0BDFC001BD5BE /* ViewController.swift in Sources */,
 				88DD9EE11DD49BD8001BD5BE /* LogCell.swift in Sources */,
 				88DD9E911DD0C731001BD5BE /* MethodsDataSource.swift in Sources */,

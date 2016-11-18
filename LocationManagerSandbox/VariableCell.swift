@@ -7,7 +7,16 @@ class VariableCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
 
     @IBAction func didTapEditButton(sender: UIButton) {
-        print("tapped")
+        let inputAccessoryView = InputAccessoryView.fromNib()
+        inputViewTrigger.inputAccessoryView = inputAccessoryView
+        inputViewTrigger.becomeFirstResponder()
+    }
+
+    private let inputViewTrigger = UITextField()
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        addSubview(inputViewTrigger)
     }
     
 }

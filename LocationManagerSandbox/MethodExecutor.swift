@@ -25,6 +25,10 @@ class MethodExecutor {
         self.logData = logData
     }
 
+}
+
+extension MethodExecutor {
+
     func execute(_ method: MethodEnum) {
         switch method {
         case .requestWhenInUseAuthorization: requestWhenInUseAuthorization()
@@ -36,80 +40,76 @@ class MethodExecutor {
         case .requestLocation: requestLocation()
         }
     }
-    
-    func get(_ variable: BoolEnum) {
-        switch variable {
-        case .pausesLocationUpdatesAutomatically: pausesLocationUpdatesAutomaticallyGet()
-        }
-    }
 
-    func set(_ variable: BoolEnum, value: Bool) {
-        switch variable {
-        case .pausesLocationUpdatesAutomatically: return pausesLocationUpdatesAutomaticallySet(value)
-        }
-    }
-
-    func value(_ variable: BoolEnum) -> Bool {
-        switch variable {
-        case .pausesLocationUpdatesAutomatically: return pausesLocationUpdatesAutomatically
-        }
-    }
-    
-}
-
-fileprivate extension MethodExecutor {
-
-    func requestWhenInUseAuthorization() {
+    private func requestWhenInUseAuthorization() {
         locationManager.requestWhenInUseAuthorization()
         logData.newEntry(.requestWhenInUseAuthorization)
     }
-    
-    func requestAlwaysAuthorization() {
+
+    private func requestAlwaysAuthorization() {
         locationManager.requestAlwaysAuthorization()
         logData.newEntry(.requestAlwaysAuthorization)
     }
 
-    func authorizationStatus() {
+    private func authorizationStatus() {
         let status = CLLocationManager.authorizationStatus()
         logData.newEntry(.authorizationStatus(status))
     }
 
-    func locationServicesEnabled() {
+    private func locationServicesEnabled() {
         let enabled = CLLocationManager.locationServicesEnabled()
         logData.newEntry(.locationServicesEnabled(enabled))
     }
 
-    func startUpdatingLocation() {
+    private func startUpdatingLocation() {
         locationManager.startUpdatingLocation()
         logData.newEntry(.startUpdatingLocation)
     }
 
-    func stopUpdatingLocation() {
+    private func stopUpdatingLocation() {
         locationManager.stopUpdatingLocation()
         logData.newEntry(.stopUpdatingLocation)
     }
 
-    func requestLocation() {
+    private func requestLocation() {
         locationManager.requestLocation()
         logData.newEntry(.requestLocation)
     }
 
 }
 
-fileprivate extension MethodExecutor {
+extension MethodExecutor {
 
-    func pausesLocationUpdatesAutomaticallySet(_ value: Bool) {
-        locationManager.pausesLocationUpdatesAutomatically = value
-        logData.newEntry(.pausesLocationUpdatesAutomaticallySet(value))
+    func set(_ boolean: BoolEnum, _ value: Bool) {
+        switch boolean {
+        case .pausesLocationUpdatesAutomatically: return pausesLocationUpdatesAutomaticallySet(value)
+        }
     }
 
-    func pausesLocationUpdatesAutomaticallyGet() {
+    func get(_ boolean: BoolEnum) -> Bool {
+        switch boolean {
+        case .pausesLocationUpdatesAutomatically: return pausesLocationUpdatesAutomatically
+        }
+    }
+
+    func log(_ boolean: BoolEnum) {
+        switch boolean {
+        case .pausesLocationUpdatesAutomatically: return pausesLocationUpdatesAutomaticallyLog()
+        }
+    }
+
+    private var pausesLocationUpdatesAutomatically: Bool {
+        return locationManager.pausesLocationUpdatesAutomatically
+    }
+
+    private func pausesLocationUpdatesAutomaticallyLog() {
         let result = pausesLocationUpdatesAutomatically
         logData.newEntry(.pausesLocationUpdatesAutomaticallyGet(result))
     }
 
-    var pausesLocationUpdatesAutomatically: Bool {
-        return locationManager.pausesLocationUpdatesAutomatically
+    private func pausesLocationUpdatesAutomaticallySet(_ value: Bool) {
+        locationManager.pausesLocationUpdatesAutomatically = value
+        logData.newEntry(.pausesLocationUpdatesAutomaticallySet(value))
     }
-    
+
 }

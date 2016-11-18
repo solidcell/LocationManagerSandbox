@@ -16,10 +16,8 @@ class MethodSectionDelegate: NSObject, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let methodItem = methodSection.items[indexPath.row]
         switch methodItem {
-        case .action(let method):
-            executor.execute(method)
-        case .setGet(let variable):
-            executor.get(variable)
+        case .method(let method): executor.execute(method)
+        case .boolean(let boolean): executor.log(boolean)
         }
     }
     

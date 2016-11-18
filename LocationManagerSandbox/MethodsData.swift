@@ -8,26 +8,26 @@ class MethodsData {
     }
 
     enum MethodItem {
-        case action(MethodExecutor.MethodEnum)
-        case setGet(MethodExecutor.BoolEnum)
+        case method(MethodExecutor.MethodEnum)
+        case boolean(MethodExecutor.BoolEnum)
     }
 
     private let authorizationSection =
         MethodSection(name: "Authorization",
-                      items: [.action(.requestWhenInUseAuthorization),
-                              .action(.requestAlwaysAuthorization)])
+                      items: [.method(.requestWhenInUseAuthorization),
+                              .method(.requestAlwaysAuthorization)])
 
     private let availabilitySection =
         MethodSection(name: "Availability",
-                      items: [.action(.authorizationStatus),
-                              .action(.locationServicesEnabled)])
+                      items: [.method(.authorizationStatus),
+                              .method(.locationServicesEnabled)])
 
     private let standardLocationUpdatesSection =
         MethodSection(name: "Standard Location Updates",
-                      items: [.action(.startUpdatingLocation),
-                              .action(.stopUpdatingLocation),
-                              .action(.requestLocation),
-                              .setGet(.pausesLocationUpdatesAutomatically)])
+                      items: [.method(.startUpdatingLocation),
+                              .method(.stopUpdatingLocation),
+                              .method(.requestLocation),
+                              .boolean(.pausesLocationUpdatesAutomatically)])
 
     let sections: [MethodSection]
 

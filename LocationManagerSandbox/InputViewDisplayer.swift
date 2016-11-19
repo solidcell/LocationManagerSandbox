@@ -7,17 +7,24 @@ protocol InputViewDisplaying {
 class InputViewDisplayer {
     
     fileprivate let triggerView = UITextField()
+    fileprivate let inputView: InputView
+    fileprivate let dataSelected: ([Int]) -> Void
 
-    init(for parentView: UIView) {
-        triggerView.isHidden = true
-        parentView.addSubview(triggerView)
+    init(for parentView: UIView,
+         data: InputView.Data,
+         dataSelected: @escaping ([Int]) -> Void) {
         
+        self.dataSelected = dataSelected
+
+        self.inputView = InputView(components: data)
+        triggerView.inputView = inputView
+
         let inputAccessoryView = InputAccessoryView.fromNib()
         inputAccessoryView.delegate = self
         triggerView.inputAccessoryView = inputAccessoryView
 
-        let accessoryView = UIPickerView()
-        triggerView.inputView = accessoryView
+        triggerView.isHidden = true
+        parentView.addSubview(triggerView)
     }
     
 }
@@ -33,6 +40,7 @@ extension InputViewDisplayer: InputViewDisplaying {
 extension InputViewDisplayer: InputAccessoryViewDelegate {
     
     func didTapDone() {
+        dataSelected(inputView.selectedRows)
         dismiss()
     }
 

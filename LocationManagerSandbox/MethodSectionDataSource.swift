@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 class MethodSectionDataSource: NSObject, UITableViewDataSource {
 
@@ -36,6 +37,13 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: VariableCell.cellIdentifier,
                                                      for: indexPath) as! VariableCell
             cell.titleLabel.text = String(describing: locationDistance)
+            let data = [[PrettyLocationDistance(kCLDistanceFilterNone),
+                         PrettyLocationDistance(CLLocationDistanceMax),
+                         PrettyLocationDistance(1.0)]]
+            cell.inputData = data
+            cell.dataSelected = { [weak executor] items in
+                items.enumerated().forEach { executor?.set(locationDistance, data[$0][$1].distance) }
+            }
             return cell
         }
     }

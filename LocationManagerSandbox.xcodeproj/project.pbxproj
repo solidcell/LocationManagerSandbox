@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880342FC1DE0DF0A0055DA33 /* CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880342FB1DE0DF0A0055DA33 /* CustomStringConvertible.swift */; };
 		8812824F1DDF531E0046C77C /* VariableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812824E1DDF531E0046C77C /* VariableCell.swift */; };
 		881282511DDF65B40046C77C /* InputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881282501DDF65B40046C77C /* InputAccessoryView.xib */; };
 		881282531DDF665B0046C77C /* InputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881282521DDF665B0046C77C /* InputAccessoryView.swift */; };
 		881282551DDF71000046C77C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881282541DDF71000046C77C /* UIView.swift */; };
 		881282581DDF9A740046C77C /* InputViewDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881282571DDF9A740046C77C /* InputViewDisplayer.swift */; };
+		8812825A1DE069100046C77C /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881282591DE069100046C77C /* InputView.swift */; };
 		885408661DD7AEBA002E4A6E /* MethodSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */; };
 		885408681DD86E04002E4A6E /* MethodSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */; };
 		88D171681DD8C2C200D77D9B /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D171671DD8C2C200D77D9B /* DotView.swift */; };
@@ -48,11 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		880342FB1DE0DF0A0055DA33 /* CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStringConvertible.swift; sourceTree = "<group>"; };
 		8812824E1DDF531E0046C77C /* VariableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableCell.swift; sourceTree = "<group>"; };
 		881282501DDF65B40046C77C /* InputAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputAccessoryView.xib; sourceTree = "<group>"; };
 		881282521DDF665B0046C77C /* InputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAccessoryView.swift; sourceTree = "<group>"; };
 		881282541DDF71000046C77C /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		881282571DDF9A740046C77C /* InputViewDisplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewDisplayer.swift; sourceTree = "<group>"; };
+		881282591DE069100046C77C /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionTableViewController.swift; sourceTree = "<group>"; };
 		885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionDataSource.swift; sourceTree = "<group>"; };
 		88D171671DD8C2C200D77D9B /* DotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				881282501DDF65B40046C77C /* InputAccessoryView.xib */,
 				881282521DDF665B0046C77C /* InputAccessoryView.swift */,
 				881282571DDF9A740046C77C /* InputViewDisplayer.swift */,
+				881282591DE069100046C77C /* InputView.swift */,
 			);
 			name = "Input View";
 			sourceTree = "<group>";
@@ -116,10 +121,10 @@
 				885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */,
 				88D171691DD9C26400D77D9B /* BooleanCell.swift */,
 				8812824E1DDF531E0046C77C /* VariableCell.swift */,
-				881282561DDF9A560046C77C /* Input View */,
 				885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */,
 				88DD9E921DD0CB19001BD5BE /* MethodSectionDelegate.swift */,
 				88DD9E961DD0D0B4001BD5BE /* MethodExecutor.swift */,
+				881282561DDF9A560046C77C /* Input View */,
 			);
 			name = "Method Section";
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			children = (
 				88DD9EDD1DD49A9B001BD5BE /* UIColor.swift */,
 				881282541DDF71000046C77C /* UIView.swift */,
+				880342FB1DE0DF0A0055DA33 /* CustomStringConvertible.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			files = (
 				88DD9E9C1DD0D9EB001BD5BE /* LogDataSource.swift in Sources */,
 				881282531DDF665B0046C77C /* InputAccessoryView.swift in Sources */,
+				8812825A1DE069100046C77C /* InputView.swift in Sources */,
 				881282551DDF71000046C77C /* UIView.swift in Sources */,
 				88DD9EDE1DD49A9B001BD5BE /* UIColor.swift in Sources */,
 				88D171681DD8C2C200D77D9B /* DotView.swift in Sources */,
@@ -324,6 +331,7 @@
 				88DD9E931DD0CB19001BD5BE /* MethodSectionDelegate.swift in Sources */,
 				88DD9EA61DD22118001BD5BE /* CellDecorator.swift in Sources */,
 				88DD9EA01DD0DB8C001BD5BE /* LocationManagerDelegate.swift in Sources */,
+				880342FC1DE0DF0A0055DA33 /* CustomStringConvertible.swift in Sources */,
 				88DD9E9E1DD0DAA8001BD5BE /* LogData.swift in Sources */,
 				88DD9EA21DD0E5F2001BD5BE /* CLAuthorizationStatus.swift in Sources */,
 				8812824F1DDF531E0046C77C /* VariableCell.swift in Sources */,

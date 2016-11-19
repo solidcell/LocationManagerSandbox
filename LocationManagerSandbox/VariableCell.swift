@@ -2,7 +2,10 @@ import UIKit
 
 class VariableCell: UITableViewCell {
     
-    static let cellIdentifier = "VariableCellIdentifier"
+    static var cellIdentifier: String { return "VariableCellIdentifier" }
+
+    var inputData: InputView.Data!
+    var dataSelected: (([Int]) -> Void)!
 
     @IBOutlet weak var titleLabel: UILabel!
 
@@ -11,7 +14,9 @@ class VariableCell: UITableViewCell {
     }
 
     private lazy var inputViewDisplayer: InputViewDisplaying = {
-        return InputViewDisplayer(for: self)
+        return InputViewDisplayer(for: self,
+                                  data: self.inputData,
+                                  dataSelected: self.dataSelected)
     }()
     
 }

@@ -83,22 +83,6 @@ extension Date {
     
 }
 
-extension CLLocation {
-
-    override open var description: String {
-        return "\(coordinate)(\(horizontalAccuracy)) \(timestamp.formatted) a\(altitude)(\(verticalAccuracy)) s\(speed) c\(course)"
-    }
-    
-}
-
-extension CLLocationCoordinate2D: CustomStringConvertible {
-
-    public var description: String {
-        return "\(latitude),\(longitude)"
-    }
-    
-}
-
 private extension UIColor {
 
     class var good: UIColor { return UIColor(rgb: 0x67AD65) }

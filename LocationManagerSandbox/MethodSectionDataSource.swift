@@ -20,11 +20,11 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let methodItem = methodSection.items[indexPath.row]
         switch methodItem {
-        case .method(let method):
+        case .action(let action):
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: MethodSectionDataSource.actionCellIdentifier,
                 for: indexPath)
-            cell.textLabel?.text = String(describing: method)
+            cell.textLabel?.text = String(describing: action)
             return cell
         case .boolean(let boolean):
             let cell = tableView.dequeueReusableCell(withIdentifier: BooleanCell.cellIdentifier,
@@ -44,6 +44,12 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
             cell.dataSelected = { [weak executor] items in
                 items.enumerated().forEach { executor?.set(locationDistance, data[$0][$1].distance) }
             }
+            return cell
+        case .allowDeferredLocationUpdates:
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: MethodSectionDataSource.actionCellIdentifier,
+                for: indexPath)
+            cell.textLabel?.text = String(describing: methodItem)
             return cell
         }
     }

@@ -2,7 +2,7 @@ import CoreLocation
 
 class MethodExecutor {
 
-    enum MethodEnum {
+    enum ActionEnum {
         case requestWhenInUseAuthorization
         case requestAlwaysAuthorization
         case authorizationStatus
@@ -32,8 +32,17 @@ class MethodExecutor {
 }
 
 extension MethodExecutor {
+    
+    func allowDeferredLocationUpdates(distance: CLLocationDistance, timeout: TimeInterval) {
+        logData.newEntry(.allowDeferredLocationUpdates(distance, timeout))
+        locationManager.allowDeferredLocationUpdates(untilTraveled: distance, timeout: timeout)
+    }
 
-    func execute(_ method: MethodEnum) {
+}
+
+extension MethodExecutor {
+
+    func execute(_ method: ActionEnum) {
         switch method {
         case .requestWhenInUseAuthorization: requestWhenInUseAuthorization()
         case .requestAlwaysAuthorization: requestAlwaysAuthorization()

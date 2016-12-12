@@ -35,6 +35,8 @@ enum LogMethod {
     case pausesLocationUpdatesAutomaticallyGet(Bool)
     case distanceFilterGet(CLLocationDistance)
     case distanceFilterSet(CLLocationDistance)
+        // Deferring Location Updates
+    case allowDeferredLocationUpdates(CLLocationDistance, TimeInterval)
     
     // Location Manager Delegate
     case didUpdateLocations([CLLocation])

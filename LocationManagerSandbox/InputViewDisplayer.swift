@@ -1,9 +1,5 @@
 import UIKit
 
-protocol InputViewDisplaying {
-    func show()
-}
-
 class InputViewDisplayer {
     
     fileprivate let triggerView = UITextField()
@@ -25,14 +21,12 @@ class InputViewDisplayer {
 
         triggerView.isHidden = true
         parentView.addSubview(triggerView)
-    }
-    
-}
-
-extension InputViewDisplayer: InputViewDisplaying {
-    
-    func show() {
+        
         triggerView.becomeFirstResponder()
+    }
+
+    deinit {
+        triggerView.removeFromSuperview()
     }
     
 }

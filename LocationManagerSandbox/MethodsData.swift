@@ -8,35 +8,45 @@ class MethodsData {
     }
 
     enum MethodItem {
-        case method(MethodExecutor.MethodEnum)
+        case action(MethodExecutor.ActionEnum)
         case boolean(MethodExecutor.BoolEnum)
         case locationDistance(MethodExecutor.LocationDistanceEnum)
+        case allowDeferredLocationUpdates
     }
 
     private let authorizationSection =
         MethodSection(name: "Authorization",
-                      items: [.method(.requestWhenInUseAuthorization),
-                              .method(.requestAlwaysAuthorization)])
+                      // TODO add a detail label to these which says
+                      // note: Would crash if Info.plist did not have _____
+                      items: [.action(.requestWhenInUseAuthorization),
+                              .action(.requestAlwaysAuthorization)])
 
     private let availabilitySection =
         MethodSection(name: "Availability",
-                      items: [.method(.authorizationStatus),
-                              .method(.locationServicesEnabled)])
+                      items: [.action(.authorizationStatus),
+                              .action(.locationServicesEnabled)])
 
     private let standardLocationUpdatesSection =
         MethodSection(name: "Standard Location Updates",
-                      items: [.method(.startUpdatingLocation),
-                              .method(.stopUpdatingLocation),
-                              .method(.requestLocation),
+                      items: [.action(.startUpdatingLocation),
+                              .action(.stopUpdatingLocation),
+                              .action(.requestLocation),
                               .boolean(.pausesLocationUpdatesAutomatically),
                               .locationDistance(.distanceFilter)])
+
+    private let deferringLocationUpdates =
+        MethodSection(name: "Deferring Location Updates",
+                      // TODO add a detail label which says
+                      // note: Would crash if Info.plist did not have UIBackgroundModes=[location]
+                      items: [.allowDeferredLocationUpdates])
 
     let sections: [MethodSection]
 
     init() {
         self.sections = [authorizationSection,
                          availabilitySection,
-                         standardLocationUpdatesSection]
+                         standardLocationUpdatesSection,
+                         deferringLocationUpdates]
     }
 
 }

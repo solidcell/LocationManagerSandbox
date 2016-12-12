@@ -21,15 +21,26 @@ class InputView: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return components[component].count
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return components[component][row].description
-    }
 
     var selectedRows: [Int] {
         return components.enumerated().map { i, _ in
             return selectedRow(inComponent: i)
         }
+    }
+
+    /* For some reason, when there are multiple dials, the text alignment is 
+     changes for a row in focus vs out of focus. Check out "Deferring Location
+     Updates" > "allowDeferredLocationUpdates" to reproduce it.
+     Punting for now, since it's low priority.
+     */
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = view as? UILabel ?? UILabel()
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.adjustsFontSizeToFitWidth = true
+        label.text = components[component][row].description
+        
+        return label
     }
     
     required init?(coder aDecoder: NSCoder) {

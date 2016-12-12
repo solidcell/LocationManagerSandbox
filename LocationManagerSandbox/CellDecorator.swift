@@ -48,10 +48,14 @@ class CellDecorator {
                           detail: pauses)
         case .distanceFilterSet(let value):
             cell.decorate(title: "distanceFilter =",
-                          detail: value)
+                          detail: PrettyLocationDistance(value))
         case .distanceFilterGet(let value):
             cell.decorate(title: "distanceFilter",
-                          detail: value)
+                          detail: PrettyLocationDistance(value))
+        case .allowDeferredLocationUpdates(let distance, let timeout):
+            cell.decorate(title: "allowDeferredLocationUpdates(untilTraveled:timeout:)",
+                          details: [PrettyLocationDistance(distance),
+                                    PrettyTimeInterval(timeout)])
         // Location Manager Delegate
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",

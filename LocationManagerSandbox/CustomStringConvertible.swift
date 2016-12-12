@@ -33,3 +33,20 @@ struct PrettyLocationDistance: CustomStringConvertible {
     }
     
 }
+
+struct PrettyTimeInterval: CustomStringConvertible {
+    
+    let timeInterval: TimeInterval
+
+    init(_ timeInterval: TimeInterval) {
+        self.timeInterval = timeInterval
+    }
+    
+    var description: String {
+        switch timeInterval {
+        case CLTimeIntervalMax: return "CLTimeIntervalMax"
+        default: return String(describing: timeInterval)
+        }
+    }
+    
+}

@@ -6,17 +6,14 @@ class VariableCell: UITableViewCell {
 
     var inputData: InputView.Data!
     var dataSelected: (([Int]) -> Void)!
+    private var inputViewDisplayer: InputViewDisplayer?
 
     @IBOutlet weak var titleLabel: UILabel!
 
     @IBAction func didTapEditButton(sender: UIButton) {
-        inputViewDisplayer.show()
+        self.inputViewDisplayer = InputViewDisplayer(for: self,
+                                                     data: self.inputData,
+                                                     dataSelected: self.dataSelected)
     }
-
-    private lazy var inputViewDisplayer: InputViewDisplaying = {
-        return InputViewDisplayer(for: self,
-                                  data: self.inputData,
-                                  dataSelected: self.dataSelected)
-    }()
     
 }

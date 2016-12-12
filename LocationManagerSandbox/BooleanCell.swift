@@ -7,18 +7,23 @@ class BooleanCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var switchOutlet: UISwitch!
 
-    var getValue: (() -> Bool?)! {
-        didSet { ensureValueIsCorrect() }
+    private var executor: MethodExecutor!
+    private var boolean: MethodExecutor.BoolEnum!
+
+    func configure(executor: MethodExecutor, boolean: MethodExecutor.BoolEnum) {
+        self.executor = executor
+        self.boolean = boolean
+        titleLabel.text = String(describing: boolean)
+        updateSwitchState()
     }
-    var switchCallback: ((Bool) -> Void)!
     
     @IBAction func switchAction(_ sender: UISwitch) {
-        switchCallback(sender.isOn)
-        ensureValueIsCorrect()
+        executor.set(boolean, sender.isOn)
+        updateSwitchState()
     }
 
-    private func ensureValueIsCorrect() {
-        switchOutlet.isOn = getValue?() ?? false
+    private func updateSwitchState() {
+        switchOutlet.isOn = executor.get(boolean)
     }
 
 }

@@ -1,5 +1,4 @@
 import UIKit
-import CoreLocation
 
 class MethodSectionDataSource: NSObject, UITableViewDataSource {
 
@@ -21,34 +20,23 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
         let methodItem = methodSection.items[indexPath.row]
         switch methodItem {
         case .action(let action):
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: MethodSectionDataSource.actionCellIdentifier,
-                for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: MethodSectionDataSource.actionCellIdentifier,
+                                                     for: indexPath)
             cell.textLabel?.text = String(describing: action)
             return cell
         case .boolean(let boolean):
             let cell = tableView.dequeueReusableCell(withIdentifier: BooleanCell.cellIdentifier,
                                                      for: indexPath) as! BooleanCell
-            cell.titleLabel.text = String(describing: boolean)
-            cell.getValue = { [weak executor] in return executor?.get(boolean) }
-            cell.switchCallback = { [weak executor] in executor?.set(boolean, $0) }
+            cell.configure(executor: executor, boolean: boolean)
             return cell
         case .locationDistance(let locationDistance):
             let cell = tableView.dequeueReusableCell(withIdentifier: VariableCell.cellIdentifier,
                                                      for: indexPath) as! VariableCell
-            cell.titleLabel.text = String(describing: locationDistance)
-            let data = [[PrettyLocationDistance(kCLDistanceFilterNone),
-                         PrettyLocationDistance(CLLocationDistanceMax),
-                         PrettyLocationDistance(1.0)]]
-            cell.inputData = data
-            cell.dataSelected = { [weak executor] items in
-                items.enumerated().forEach { executor?.set(locationDistance, data[$0][$1].distance) }
-            }
+            cell.configure(executor: executor, locationDistance: locationDistance)
             return cell
         case .allowDeferredLocationUpdates:
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: MethodSectionDataSource.actionCellIdentifier,
-                for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: MethodSectionDataSource.actionCellIdentifier,
+                                                     for: indexPath)
             cell.textLabel?.text = String(describing: methodItem)
             return cell
         }

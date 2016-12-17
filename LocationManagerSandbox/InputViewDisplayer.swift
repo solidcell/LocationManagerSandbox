@@ -4,15 +4,12 @@ class InputViewDisplayer {
     
     fileprivate let triggerView = UITextField()
     fileprivate let inputView: InputView
-    fileprivate let dataSelected: ([Int]) -> Void
+    fileprivate let dataSource: InputViewDataSource
 
-    init(for parentView: UIView,
-         data: InputView.Data,
-         dataSelected: @escaping ([Int]) -> Void) {
-        
-        self.dataSelected = dataSelected
+    init(for parentView: UIView, dataSource: InputViewDataSource) {
+        self.dataSource = dataSource
 
-        self.inputView = InputView(components: data)
+        self.inputView = InputView(components: dataSource.data)
         triggerView.inputView = inputView
 
         let inputAccessoryView = InputAccessoryView.fromNib()
@@ -34,7 +31,7 @@ class InputViewDisplayer {
 extension InputViewDisplayer: InputAccessoryViewDelegate {
     
     func didTapDone() {
-        dataSelected(inputView.selectedRows)
+        dataSource.selected(items: inputView.selectedRows)
         dismiss()
     }
 

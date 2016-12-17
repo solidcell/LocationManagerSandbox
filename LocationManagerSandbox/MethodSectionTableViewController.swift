@@ -28,12 +28,9 @@ class InputRetriever {
         self.view = view
     }
 
-    func inputFrom(data: InputView.Data,
-                   dataSelected: @escaping ([Int]) -> Void) {
+    func inputFrom(dataSource: InputViewDataSource) {
         guard let view = view else { return }
-        self.inputViewDisplayer = InputViewDisplayer(for: view,
-                                                     data: data,
-                                                     dataSelected: dataSelected)
+        self.inputViewDisplayer = InputViewDisplayer(for: view, dataSource: dataSource)
     }
     
 }

@@ -2,12 +2,9 @@ import UIKit
 
 class InputView: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    typealias Component = [CustomStringConvertible]
-    typealias Data = [Component]
+    let components: [[CustomStringConvertible]]
 
-    let components: Data
-
-    init(components: Data) {
+    init(components: [[CustomStringConvertible]]) {
         self.components = components
         super.init(frame: CGRect.zero)
         self.dataSource = self

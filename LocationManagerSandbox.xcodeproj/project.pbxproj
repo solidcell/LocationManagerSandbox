@@ -16,6 +16,7 @@
 		8812825A1DE069100046C77C /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881282591DE069100046C77C /* InputView.swift */; };
 		885408661DD7AEBA002E4A6E /* MethodSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */; };
 		885408681DD86E04002E4A6E /* MethodSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */; };
+		886032401E059B7E00EFA335 /* InputViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860323F1E059B7E00EFA335 /* InputViewDataSource.swift */; };
 		88D171681DD8C2C200D77D9B /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D171671DD8C2C200D77D9B /* DotView.swift */; };
 		88D1716A1DD9C26400D77D9B /* BooleanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D171691DD9C26400D77D9B /* BooleanCell.swift */; };
 		88DD9E6E1DD0BDFC001BD5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E6D1DD0BDFC001BD5BE /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		881282591DE069100046C77C /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		885408651DD7AEBA002E4A6E /* MethodSectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionTableViewController.swift; sourceTree = "<group>"; };
 		885408671DD86E04002E4A6E /* MethodSectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodSectionDataSource.swift; sourceTree = "<group>"; };
+		8860323F1E059B7E00EFA335 /* InputViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewDataSource.swift; sourceTree = "<group>"; };
 		88D171671DD8C2C200D77D9B /* DotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
 		88D171691DD9C26400D77D9B /* BooleanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooleanCell.swift; sourceTree = "<group>"; };
 		88DD9E6A1DD0BDFC001BD5BE /* LocationManagerSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationManagerSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 				881282501DDF65B40046C77C /* InputAccessoryView.xib */,
 				881282521DDF665B0046C77C /* InputAccessoryView.swift */,
 				881282571DDF9A740046C77C /* InputViewDisplayer.swift */,
+				8860323F1E059B7E00EFA335 /* InputViewDataSource.swift */,
 				881282591DE069100046C77C /* InputView.swift */,
 			);
 			name = "Input View";
@@ -336,6 +339,7 @@
 				88DD9EA21DD0E5F2001BD5BE /* CLAuthorizationStatus.swift in Sources */,
 				8812824F1DDF531E0046C77C /* VariableCell.swift in Sources */,
 				885408661DD7AEBA002E4A6E /* MethodSectionTableViewController.swift in Sources */,
+				886032401E059B7E00EFA335 /* InputViewDataSource.swift in Sources */,
 				885408681DD86E04002E4A6E /* MethodSectionDataSource.swift in Sources */,
 				88DD9E971DD0D0B4001BD5BE /* MethodExecutor.swift in Sources */,
 				88D1716A1DD9C26400D77D9B /* BooleanCell.swift in Sources */,

@@ -32,7 +32,9 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
         case .locationDistance(let locationDistance):
             let cell = tableView.dequeueReusableCell(withIdentifier: VariableCell.cellIdentifier,
                                                      for: indexPath) as! VariableCell
-            cell.configure(executor: executor, locationDistance: locationDistance)
+            let dataSource = LocationDistanceDataSource(executor: executor, locationDistance: locationDistance)
+            let title = String(describing: locationDistance)
+            cell.configure(dataSource: dataSource, title: title)
             return cell
         case .allowDeferredLocationUpdates:
             let cell = tableView.dequeueReusableCell(withIdentifier: MethodSectionDataSource.actionCellIdentifier,

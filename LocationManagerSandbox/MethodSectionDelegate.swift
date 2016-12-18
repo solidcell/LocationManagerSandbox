@@ -22,7 +22,9 @@ class MethodSectionDelegate: NSObject, UITableViewDelegate {
         case .boolean(let boolean): executor.log(boolean)
         case .locationDistance(let locationDistance): executor.log(locationDistance)
         case .allowDeferredLocationUpdates:
-            inputRetriever.inputFrom(dataSource: DeferredUpdatedDataSource(executor: executor))
+            let dataSource = DeferredUpdatedDataSource(executor: executor)
+            inputRetriever.inputFrom(dataSource: dataSource)
+        case .activityType: executor.activityTypeLog()
         }
     }
     

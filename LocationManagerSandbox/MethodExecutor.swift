@@ -32,7 +32,24 @@ class MethodExecutor {
 }
 
 extension MethodExecutor {
-    
+
+    var activityType: CLActivityType {
+        return locationManager.activityType
+    }
+
+    func activityTypeLog() {
+        logData.newEntry(.activityTypeGet(activityType))
+    }
+
+    func activityTypeSet(_ value: CLActivityType) {
+        locationManager.activityType = value
+        logData.newEntry(.activityTypeSet(activityType))
+    }
+
+}
+
+extension MethodExecutor {
+
     func allowDeferredLocationUpdates(distance: CLLocationDistance, timeout: TimeInterval) {
         logData.newEntry(.allowDeferredLocationUpdates(distance, timeout))
         locationManager.allowDeferredLocationUpdates(untilTraveled: distance, timeout: timeout)

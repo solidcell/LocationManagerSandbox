@@ -61,3 +61,25 @@ struct DeferredUpdatedDataSource : InputViewDataSource {
         executor.allowDeferredLocationUpdates(distance: distance, timeout: timeout)
     }
 }
+
+struct ActivityTypeDataSource : InputViewDataSource {
+
+    private let executor: MethodExecutor
+    private let activityTypes = [PrettyActivityType(.automotiveNavigation),
+                                 PrettyActivityType(.fitness),
+                                 PrettyActivityType(.other),
+                                 PrettyActivityType(.otherNavigation)]
+
+    init(executor: MethodExecutor) {
+        self.executor = executor
+    }
+
+    var data: [[CustomStringConvertible]] {
+        return [activityTypes]
+    }
+    
+    func selected(items: [Int]) {
+        let activityType = activityTypes[items[0]].activityType
+        executor.activityTypeSet(activityType)
+    }
+}

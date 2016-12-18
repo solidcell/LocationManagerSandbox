@@ -12,6 +12,7 @@ class MethodsData {
         case boolean(MethodExecutor.BoolEnum)
         case locationDistance(MethodExecutor.LocationDistanceEnum)
         case allowDeferredLocationUpdates
+        case activityType
     }
 
     private let authorizationSection =
@@ -32,7 +33,8 @@ class MethodsData {
                               .action(.stopUpdatingLocation),
                               .action(.requestLocation),
                               .boolean(.pausesLocationUpdatesAutomatically),
-                              .locationDistance(.distanceFilter)])
+                              .locationDistance(.distanceFilter),
+                              .activityType])
 
     private let deferringLocationUpdates =
         MethodSection(name: "Deferring Location Updates",

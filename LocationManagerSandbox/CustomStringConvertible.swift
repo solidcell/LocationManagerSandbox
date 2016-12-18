@@ -16,6 +16,25 @@ extension CLLocationCoordinate2D: CustomStringConvertible {
     
 }
 
+struct PrettyActivityType: CustomStringConvertible {
+    
+    let activityType: CLActivityType
+
+    init(_ activityType: CLActivityType) {
+        self.activityType = activityType
+    }
+    
+    var description: String {
+        switch activityType {
+        case .automotiveNavigation: return "automotiveNavigation"
+        case .fitness: return "fitness"
+        case .other: return "other"
+        case .otherNavigation: return "otherNavigation"
+        }
+    }
+    
+}
+
 struct PrettyLocationDistance: CustomStringConvertible {
     
     let distance: CLLocationDistance

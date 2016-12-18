@@ -52,6 +52,12 @@ class CellDecorator {
         case .distanceFilterGet(let value):
             cell.decorate(title: "distanceFilter",
                           detail: PrettyLocationDistance(value))
+        case .activityTypeSet(let value):
+            cell.decorate(title: "activityType =",
+                          detail: PrettyActivityType(value))
+        case .activityTypeGet(let value):
+            cell.decorate(title: "activityType",
+                          detail: PrettyActivityType(value))
         case .allowDeferredLocationUpdates(let distance, let timeout):
             cell.decorate(title: "allowDeferredLocationUpdates(untilTraveled:timeout:)",
                           details: [PrettyLocationDistance(distance),

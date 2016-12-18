@@ -41,6 +41,13 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
                                                      for: indexPath)
             cell.textLabel?.text = String(describing: methodItem)
             return cell
+        case .activityType:
+            let cell = tableView.dequeueReusableCell(withIdentifier: VariableCell.cellIdentifier,
+                                                     for: indexPath) as! VariableCell
+            let dataSource = ActivityTypeDataSource(executor: executor)
+            let title = String(describing: methodItem)
+            cell.configure(dataSource: dataSource, title: title)
+            return cell
         }
     }
 

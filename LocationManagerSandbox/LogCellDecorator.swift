@@ -59,9 +59,9 @@ class CellDecorator {
             cell.decorate(title: "activityType",
                           detail: PrettyActivityType(value))
         case .allowDeferredLocationUpdates(let distance, let timeout):
-            cell.decorate(title: "allowDeferredLocationUpdates(untilTraveled:timeout:)",
-                          details: [PrettyLocationDistance(distance),
-                                    PrettyTimeInterval(timeout)])
+            cell.decorate(title: "allowDeferredLocationUpdates(",
+                          details: ["untilTraveled: \(PrettyLocationDistance(distance))",
+                                    "timeout: \(PrettyTimeInterval(timeout)))"])
         // Location Manager Delegate
         case .didUpdateLocations(let locations):
             cell.decorate(title: "locationManager(_:didUpdateLocations:)",

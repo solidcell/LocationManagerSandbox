@@ -10,6 +10,7 @@ class MethodExecutor {
         case startUpdatingLocation
         case stopUpdatingLocation
         case requestLocation
+        case allowDeferredLocationUpdates(CLLocationDistance, TimeInterval)
     }
 
     enum BoolEnum {
@@ -31,6 +32,10 @@ class MethodExecutor {
 
 }
 
+// TODO move all log statements to be before the actions
+// since the intention should come first, and there could
+// be subtle differences
+
 extension MethodExecutor {
 
     var activityType: CLActivityType {
@@ -50,15 +55,6 @@ extension MethodExecutor {
 
 extension MethodExecutor {
 
-    func allowDeferredLocationUpdates(distance: CLLocationDistance, timeout: TimeInterval) {
-        logData.newEntry(.allowDeferredLocationUpdates(distance, timeout))
-        locationManager.allowDeferredLocationUpdates(untilTraveled: distance, timeout: timeout)
-    }
-
-}
-
-extension MethodExecutor {
-
     func execute(_ method: ActionEnum) {
         switch method {
         case .requestWhenInUseAuthorization: requestWhenInUseAuthorization()
@@ -68,6 +64,8 @@ extension MethodExecutor {
         case .startUpdatingLocation: startUpdatingLocation()
         case .stopUpdatingLocation: stopUpdatingLocation()
         case .requestLocation: requestLocation()
+        case .allowDeferredLocationUpdates(let distance, let timeout):
+            allowDeferredLocationUpdates(distance: distance, timeout: timeout)
         }
     }
 
@@ -104,6 +102,11 @@ extension MethodExecutor {
     private func requestLocation() {
         locationManager.requestLocation()
         logData.newEntry(.requestLocation)
+    }
+
+    func allowDeferredLocationUpdates(distance: CLLocationDistance, timeout: TimeInterval) {
+        logData.newEntry(.allowDeferredLocationUpdates(distance, timeout))
+        locationManager.allowDeferredLocationUpdates(untilTraveled: distance, timeout: timeout)
     }
 
 }

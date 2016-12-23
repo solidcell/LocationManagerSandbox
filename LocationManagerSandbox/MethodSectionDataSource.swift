@@ -24,6 +24,11 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
                                                      for: indexPath)
             cell.textLabel?.text = String(describing: action)
             return cell
+        case .allowDeferredLocationUpdates:
+            let cell = tableView.dequeueReusableCell(withIdentifier: MethodSectionDataSource.actionCellIdentifier,
+                                                     for: indexPath)
+            cell.textLabel?.text = String(describing: methodItem)
+            return cell
         case .boolean(let boolean):
             let cell = tableView.dequeueReusableCell(withIdentifier: BooleanCell.cellIdentifier,
                                                      for: indexPath) as! BooleanCell
@@ -35,11 +40,6 @@ class MethodSectionDataSource: NSObject, UITableViewDataSource {
             let dataSource = LocationDistanceDataSource(executor: executor, locationDistance: locationDistance)
             let title = String(describing: locationDistance)
             cell.configure(dataSource: dataSource, title: title)
-            return cell
-        case .allowDeferredLocationUpdates:
-            let cell = tableView.dequeueReusableCell(withIdentifier: MethodSectionDataSource.actionCellIdentifier,
-                                                     for: indexPath)
-            cell.textLabel?.text = String(describing: methodItem)
             return cell
         case .activityType:
             let cell = tableView.dequeueReusableCell(withIdentifier: VariableCell.cellIdentifier,

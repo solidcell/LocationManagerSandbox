@@ -35,7 +35,7 @@
 		88DD9E9E1DD0DAA8001BD5BE /* LogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E9D1DD0DAA8001BD5BE /* LogData.swift */; };
 		88DD9EA01DD0DB8C001BD5BE /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9E9F1DD0DB8C001BD5BE /* LocationManagerDelegate.swift */; };
 		88DD9EA21DD0E5F2001BD5BE /* CLAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9EA11DD0E5F2001BD5BE /* CLAuthorizationStatus.swift */; };
-		88DD9EA61DD22118001BD5BE /* CellDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9EA51DD22118001BD5BE /* CellDecorator.swift */; };
+		88DD9EA61DD22118001BD5BE /* LogCellDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9EA51DD22118001BD5BE /* LogCellDecorator.swift */; };
 		88DD9EDE1DD49A9B001BD5BE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9EDD1DD49A9B001BD5BE /* UIColor.swift */; };
 		88DD9EE11DD49BD8001BD5BE /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD9EE01DD49BD8001BD5BE /* LogCell.swift */; };
 /* End PBXBuildFile section */
@@ -83,7 +83,7 @@
 		88DD9E9D1DD0DAA8001BD5BE /* LogData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogData.swift; sourceTree = "<group>"; };
 		88DD9E9F1DD0DB8C001BD5BE /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		88DD9EA11DD0E5F2001BD5BE /* CLAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLAuthorizationStatus.swift; sourceTree = "<group>"; };
-		88DD9EA51DD22118001BD5BE /* CellDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDecorator.swift; sourceTree = "<group>"; };
+		88DD9EA51DD22118001BD5BE /* LogCellDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCellDecorator.swift; sourceTree = "<group>"; };
 		88DD9EDD1DD49A9B001BD5BE /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		88DD9EE01DD49BD8001BD5BE /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +161,7 @@
 				88D171671DD8C2C200D77D9B /* DotView.swift */,
 				88DD9E9A1DD0D9A6001BD5BE /* Log */,
 				88DD9E8F1DD0C721001BD5BE /* All Methods */,
+				885408641DD7AEA9002E4A6E /* Method Section */,
 				88DD9EDF1DD49A9F001BD5BE /* Extensions */,
 				88DD9E741DD0BDFC001BD5BE /* Assets.xcassets */,
 				88DD9E761DD0BDFC001BD5BE /* LaunchScreen.storyboard */,
@@ -184,7 +185,6 @@
 				88DD9E8D1DD0C5BA001BD5BE /* MethodsTableViewController.swift */,
 				88DD9E901DD0C731001BD5BE /* MethodsDataSource.swift */,
 				88DD9E941DD0CBD5001BD5BE /* MethodsData.swift */,
-				885408641DD7AEA9002E4A6E /* Method Section */,
 			);
 			name = "All Methods";
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				88DD9E981DD0D987001BD5BE /* LogTableViewController.swift */,
 				88DD9E9D1DD0DAA8001BD5BE /* LogData.swift */,
 				88DD9E9B1DD0D9EB001BD5BE /* LogDataSource.swift */,
-				88DD9EA51DD22118001BD5BE /* CellDecorator.swift */,
+				88DD9EA51DD22118001BD5BE /* LogCellDecorator.swift */,
 				88DD9EE01DD49BD8001BD5BE /* LogCell.swift */,
 			);
 			name = Log;
@@ -332,7 +332,7 @@
 				88DD9E8E1DD0C5BA001BD5BE /* MethodsTableViewController.swift in Sources */,
 				88DD9E6E1DD0BDFC001BD5BE /* AppDelegate.swift in Sources */,
 				88DD9E931DD0CB19001BD5BE /* MethodSectionDelegate.swift in Sources */,
-				88DD9EA61DD22118001BD5BE /* CellDecorator.swift in Sources */,
+				88DD9EA61DD22118001BD5BE /* LogCellDecorator.swift in Sources */,
 				88DD9EA01DD0DB8C001BD5BE /* LocationManagerDelegate.swift in Sources */,
 				880342FC1DE0DF0A0055DA33 /* CustomStringConvertible.swift in Sources */,
 				88DD9E9E1DD0DAA8001BD5BE /* LogData.swift in Sources */,
